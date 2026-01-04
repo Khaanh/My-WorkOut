@@ -1,0 +1,17 @@
+@import "./reset";
+@import "./helpers";
+@import "./variables";
+
+.wrapper {
+	max-width: 100%;
+	width: 100%;
+}
+
+.container {
+	padding: 0 10px;
+	margin: 0 auto;
+}
+
+h1 {
+	text-align: center;
+}
