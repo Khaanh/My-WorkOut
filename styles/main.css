@@ -145,6 +145,8 @@ select {
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
+  border-radius: 4px;
+  padding: 2px 4px;
   /* color: $txt-color; */
 }
 
@@ -155,6 +157,8 @@ input[type=submit] {
   -webkit-appearance: none;
   cursor: pointer;
   transition: 0.3s all;
+  border-radius: 4px;
+  padding: 2px 4px;
 }
 
 button::-moz-focus-inner,
@@ -270,6 +274,54 @@ h4,
   margin: 0 auto;
 }
 
+.header {
+  margin-bottom: 48px;
+}
+
 h1 {
   text-align: center;
+}
+
+.caption {
+  font-size: 44px;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: 38px;
+  font-weight: 600;
+}
+
+.control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.control__title {
+  margin: 0;
+  margin-right: 10px;
+}
+.control__number {
+  font-size: 38px;
+  margin: 0;
+}
+
+.counter-form {
+  text-align: center;
+}
+.counter-form__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+.counter-form__input {
+  height: 42px;
+  margin: 0 8px;
+}
+.counter-form__btn {
+  min-width: 38px;
+  padding: 4px;
+  font-size: 28px;
 }/*# sourceMappingURL=main.css.map */

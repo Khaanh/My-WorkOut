@@ -16,17 +16,29 @@
 	<body>
 		<div class="wrapper">
 			<header class="header">
-				<h1>Workout Rep Tracker</h1>
+				<h1 class="caption">Workout Rep Counter</h1>
 			</header>
 
 			<div class="main-page">
 				<div class="container">
 					<div class="main-section">
-						<h2>Pull ups:</h2>
-						<form action="">
-							<button>+</button>
-							<input id="repInput" type="number" placeholder="0" />
-							<button>-</button>
+						<div class="control">
+							<h2 class="control__title title">Pull ups:</h2>
+							<p class="control__number"><span>30</span></p>
+						</div>
+
+						<form class="counter-form" action="">
+							<div class="counter-form__container">
+								<button class="counter-form__btn btn-plus">+</button>
+								<input
+									id="counterInput"
+									class="counter-form__input"
+									type="number"
+									placeholder="0"
+								/>
+								<button class="counter-form__btn btn-minus">-</button>
+							</div>
+							<button class="counter-form__btn btn-save">Save rep</button>
 						</form>
 					</div>
 				</div>
@@ -38,3 +50,5 @@
 		<script src="./js/index.js"></script>
 	</body>
 </html>
+<!-- 08.01.26 -->
+<!-- TODO: Dark(Neon)/light theme -->
