@@ -12,21 +12,32 @@
 	margin: 0 auto;
 }
 
-.header {
-	margin-bottom: 48px;
-}
 h1 {
 	text-align: center;
 }
 
 .caption {
-	font-size: 44px;
+	font-size: 42px;
 	margin-bottom: 16px;
 }
 
 .title {
 	font-size: 38px;
 	font-weight: 600;
+}
+
+.header {
+	margin-bottom: 48px;
+
+	&__container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__caption {
+		margin: 0 auto;
+	}
 }
 
 .main-section {
@@ -68,5 +79,17 @@ h1 {
 		min-width: 38px;
 		padding: 4px;
 		font-size: 28px;
+	}
+}
+
+.movement {
+	&__list {
+		list-style: none;
+		display: flex;
+	}
+	&__el {
+		margin: 0 4px;
+	}
+	&__btn {
 	}
 }
