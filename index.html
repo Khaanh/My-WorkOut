@@ -37,21 +37,41 @@
 					<div class="main-section">
 						<div class="control">
 							<h2 class="control__title title">Pull ups:</h2>
-							<p class="control__number"><span>30</span></p>
+							<p class="control__number">
+								<span id="totalRep">0</span>
+							</p>
 						</div>
 
 						<form class="counter-form" action="">
 							<div class="counter-form__container">
-								<button class="counter-form__btn btn-plus">+</button>
+								<button
+									type="button"
+									class="counter-form__btn btn-plus"
+									id="btnPlus"
+								>
+									+
+								</button>
 								<input
 									id="counterInput"
 									class="counter-form__input"
 									type="number"
 									placeholder="0"
 								/>
-								<button class="counter-form__btn btn-minus">-</button>
+								<button
+									type="button"
+									class="counter-form__btn btn-minus"
+									id="btnMinus"
+								>
+									-
+								</button>
 							</div>
-							<button class="counter-form__btn btn-save">Save rep</button>
+							<button
+								type="button"
+								class="counter-form__btn btn-save"
+								id="btnSave"
+							>
+								Save rep
+							</button>
 						</form>
 					</div>
 				</div>
