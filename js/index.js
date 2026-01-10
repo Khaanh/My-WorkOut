@@ -6,11 +6,18 @@ let counterDisplay = document.querySelector("#counterDisplay");
 let counter = 0;
 let totalCounter = 0;
 
-btnPlus.addEventListener("click", () => {
-	counter++;
-	counterInput.value = counter;
+counterInput.focus();
 
-	// console.info(totalCounter, typeof totalCounter);
+btnPlus.addEventListener("click", () => {
+	totalCounter++;
+	counterDisplay.textContent = totalCounter;
+});
+
+btnMinus.addEventListener("click", () => {
+	if (!totalCounter) return;
+
+	totalCounter--;
+	counterDisplay.textContent = totalCounter;
 });
 
 btnSave.addEventListener("click", () => {
@@ -19,6 +26,5 @@ btnSave.addEventListener("click", () => {
 		: totalCounter + Number(counterInput.value);
 	counterDisplay.textContent = totalCounter;
 
-	counter = 0;
 	counterInput.value = "";
 });
