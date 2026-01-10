@@ -10,11 +10,13 @@ btnPlus.addEventListener("click", () => {
 	counter++;
 	counterInput.value = counter;
 
-	console.info(totalCounter, typeof totalCounter);
+	// console.info(totalCounter, typeof totalCounter);
 });
 
 btnSave.addEventListener("click", () => {
-	totalCounter = counter ? counter : counterInput.value;
+	totalCounter = counterInput.value
+		? totalCounter + Number(counterInput.value)
+		: totalCounter + Number(counterInput.value);
 	counterDisplay.textContent = totalCounter;
 
 	counter = 0;
