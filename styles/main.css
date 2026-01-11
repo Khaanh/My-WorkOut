@@ -158,7 +158,7 @@ input[type=submit] {
   cursor: pointer;
   transition: 0.3s all;
   border-radius: 4px;
-  padding: 2px 4px;
+  padding: 6px 10px;
 }
 
 button::-moz-focus-inner,
@@ -306,17 +306,17 @@ h1 {
   margin: 0 auto;
 }
 
-.control {
+.control-counter {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 24px;
 }
-.control__title {
+.control-counter__title {
   margin: 0;
   margin-right: 10px;
 }
-.control__number {
+.control-counter__number {
   font-size: 38px;
   margin: 0;
 }
@@ -336,14 +336,42 @@ h1 {
 }
 .counter-form__btn {
   min-width: 38px;
-  padding: 4px;
   font-size: 28px;
 }
 
-.movement__list {
+.movement-widget {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  padding: 12px;
+}
+.movement-widget__control {
+  margin-bottom: 24px;
+}
+.movement-widget__list {
   list-style: none;
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
-.movement__el {
-  margin: 0 4px;
+.movement-widget__el {
+  margin-bottom: 14px;
+}
+.movement-widget__el:last-child {
+  margin-bottom: 0;
+}
+.movement-widget__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+}
+.movement-widget__txt {
+  font-size: 24px;
+}
+.movement-widget__icon {
+  display: flex;
+  width: 34px;
+  margin-left: 8px;
 }/*# sourceMappingURL=main.css.map */

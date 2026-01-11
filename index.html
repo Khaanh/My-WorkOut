@@ -16,13 +16,43 @@
 		<div class="wrapper">
 			<header class="header">
 				<div class="header__container container">
-					<sidebar class="movement">
-						<ul class="movement__list">
-							<li class="movement__el">
-								<button class="movement__btn">Pull up</button>
+					<sidebar class="movement-widget">
+						<button
+							class="movement-widget__control control-close"
+							id="closeMovmMenu"
+						>
+							close
+						</button>
+						<button
+							class="movement-widget__control control-open"
+							id="openMovmMenu"
+						>
+							open
+						</button>
+						<ul class="movement-widget__list">
+							<li class="movement-widget__el">
+								<button type="button" class="movement-widget__btn">
+									<span class="movement-widget__txt">Pull up</span>
+									<span class="movement-widget__icon">
+										<img src="./img/pull-up-icon.svg" alt="pull up" />
+									</span>
+								</button>
 							</li>
-							<li class="movement__el">
-								<button class="movement__btn">Push up</button>
+							<li class="movement-widget__el">
+								<button type="button" class="movement-widget__btn">
+									<span class="movement-widget__txt">Push up</span>
+									<span class="movement-widget__icon">
+										<img src="./img/push-up-icon.svg" alt="push up" />
+									</span>
+								</button>
+							</li>
+							<li class="movement-widget__el">
+								<button type="button" class="movement-widget__btn">
+									<span class="movement-widget__txt">Squats</span>
+									<span class="movement-widget__icon">
+										<img src="./img/squats-icon.svg" alt="squats" />
+									</span>
+								</button>
 							</li>
 						</ul>
 					</sidebar>
@@ -41,9 +71,9 @@
 			<div class="main-page">
 				<div class="container">
 					<div class="main-section">
-						<div class="control">
-							<h2 class="control__title title">Pull ups:</h2>
-							<p class="control__number">
+						<div class="control-counter">
+							<h2 class="control-counter__title title">Pull ups:</h2>
+							<p class="control-counter__number">
 								<span id="counterDisplay">0</span>
 							</p>
 						</div>
