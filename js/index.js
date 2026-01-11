@@ -18,17 +18,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 btnPlus.addEventListener("click", () => {
 	totalCounter++;
-	localStorage.setItem("totalCounter", Number(totalCounter));
+	localStorage.setItem("totalCounter", totalCounter);
 	counterDisplay.textContent = totalCounter;
-
-	console.log(typeof localStorage.getItem("totalCounter"));
 });
 
 btnMinus.addEventListener("click", () => {
 	if (!totalCounter) return;
 
 	totalCounter--;
-	localStorage.setItem("totalCounter", Number(totalCounter));
+	localStorage.setItem("totalCounter", totalCounter);
 	counterDisplay.textContent = totalCounter;
 });
 
@@ -40,7 +38,7 @@ btnSave.addEventListener("click", () => {
 		: totalCounter + Number(counterInput.value);
 	counterDisplay.textContent = totalCounter;
 
-	localStorage.setItem("totalCounter", Number(totalCounter));
+	localStorage.setItem("totalCounter", totalCounter);
 	counterInput.focus();
 	counterInput.value = "";
 });
