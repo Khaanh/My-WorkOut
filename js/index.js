@@ -10,7 +10,7 @@ let totalCounter = 0;
 
 document.addEventListener("DOMContentLoaded", () => {
 	counterDisplay.textContent = totalCounter = localStorage.getItem(
-		"totalCounter"
+		"totalCounter",
 	)
 		? localStorage.getItem("totalCounter")
 		: 0;
@@ -23,7 +23,7 @@ btnPlus.addEventListener("click", () => {
 });
 
 btnMinus.addEventListener("click", () => {
-	if (!totalCounter) return;
+	if (!totalCounter || totalCounter <= 0) return; // ?
 
 	totalCounter--;
 	localStorage.setItem("totalCounter", totalCounter);
@@ -33,7 +33,7 @@ btnMinus.addEventListener("click", () => {
 btnSave.addEventListener("click", () => {
 	if (!counterInput.value) return;
 
-	totalCounter = counterInput.value
+	totalCounter = Number(counterInput.value)
 		? totalCounter + Number(counterInput.value)
 		: totalCounter + Number(counterInput.value);
 	counterDisplay.textContent = totalCounter;
@@ -45,4 +45,5 @@ btnSave.addEventListener("click", () => {
 
 btnClear.addEventListener("click", () => {
 	localStorage.clear();
+	location.reload();
 });
