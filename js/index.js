@@ -8,6 +8,8 @@ let counterDisplay = document.querySelector("#counterDisplay");
 let counter = 0;
 let totalCounter = 0;
 
+const arrBtnMovement = document.querySelectorAll(".movement-widget__btn");
+
 document.addEventListener("DOMContentLoaded", () => {
 	counterDisplay.textContent = totalCounter = localStorage.getItem(
 		"totalCounter",
@@ -46,4 +48,12 @@ btnSave.addEventListener("click", () => {
 btnClear.addEventListener("click", () => {
 	localStorage.clear();
 	location.reload();
+});
+
+arrBtnMovement.forEach((btn) => {
+	btn.addEventListener("click", function (e) {
+		console.log(this);
+
+		this.classList.toggle("is-active");
+	});
 });
