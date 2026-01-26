@@ -3,6 +3,7 @@ const btnPlus = document.querySelector("#btnPlus");
 const btnMinus = document.querySelector("#btnMinus");
 const btnSave = document.querySelector("#btnSave");
 const btnClear = document.querySelector(".clear");
+const activityTitle = document.querySelector(".activity-title");
 
 let counterDisplay = document.querySelector("#counterDisplay");
 let counter = 0;
@@ -52,7 +53,8 @@ btnClear.addEventListener("click", () => {
 
 arrBtnMovement.forEach((btn) => {
 	btn.addEventListener("click", function (e) {
-		console.log(this);
+		let activity = this.dataset.activity;
+		activityTitle.textContent = activity + ":";
 
 		this.classList.toggle("is-active");
 	});

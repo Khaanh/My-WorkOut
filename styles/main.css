@@ -157,8 +157,10 @@ input[type=submit] {
   -webkit-appearance: none;
   cursor: pointer;
   transition: 0.3s all;
-  border-radius: 4px;
   padding: 6px 10px;
+  border-color: #000;
+  border-radius: 4px;
+  border-style: solid;
 }
 
 button::-moz-focus-inner,
@@ -365,7 +367,11 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 6px 10px;
+  opacity: 0.8;
+}
+.movement-widget__btn.is-active {
+  border-color: #2c3e50;
+  border-color: #8e44ad;
 }
 .movement-widget__txt {
   font-size: 24px;

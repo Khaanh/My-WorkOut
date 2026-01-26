@@ -1,6 +1,6 @@
-@import "./reset";
-@import "./helpers";
-@import "./variables";
+@import "reset";
+@import "helpers";
+@import "variables";
 
 .wrapper {
 	max-width: 100%;
@@ -115,7 +115,12 @@ h1 {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		padding: 6px 10px;
+		opacity: 0.8;
+
+		&.is-active {
+			border-color: #2c3e50;
+			border-color: #8e44ad;
+		}
 	}
 
 	&__txt {

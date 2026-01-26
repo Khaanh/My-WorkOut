@@ -34,9 +34,9 @@
 								<button
 									type="button"
 									class="movement-widget__btn"
-									data-active="pull up"
+									data-activity="pull ups"
 								>
-									<span class="movement-widget__txt">Pull up</span>
+									<span class="movement-widget__txt">Pull ups</span>
 									<span class="movement-widget__icon">
 										<img src="./img/pull-up-icon.svg" alt="pull up" />
 									</span>
@@ -46,9 +46,9 @@
 								<button
 									type="button"
 									class="movement-widget__btn"
-									data-active="push up"
+									data-activity="push ups"
 								>
-									<span class="movement-widget__txt">Push up</span>
+									<span class="movement-widget__txt">Push ups</span>
 									<span class="movement-widget__icon">
 										<img src="./img/push-up-icon.svg" alt="push up" />
 									</span>
@@ -58,7 +58,7 @@
 								<button
 									type="button"
 									class="movement-widget__btn"
-									data-active="squats"
+									data-activity="squats"
 								>
 									<span class="movement-widget__txt">Squats</span>
 									<span class="movement-widget__icon">
@@ -83,14 +83,16 @@
 			<div class="main-page">
 				<div class="container">
 					<div class="main-section">
-						<div class="control-counter">
-							<h2 class="control-counter__title title">Pull ups:</h2>
-							<p class="control-counter__number">
-								<span id="counterDisplay">0</span>
-							</p>
-						</div>
-
 						<form class="counter-form" action="">
+							<div class="control-counter">
+								<h2 class="control-counter__title title activity-title">
+									Pull ups:
+								</h2>
+								<p class="control-counter__number">
+									<span id="counterDisplay">0</span>
+								</p>
+							</div>
+
 							<div class="counter-form__container">
 								<button
 									type="button"
