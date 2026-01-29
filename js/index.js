@@ -4,10 +4,12 @@ const btnMinus = document.querySelector("#btnMinus");
 const btnSave = document.querySelector("#btnSave");
 const btnClear = document.querySelector(".clear");
 const activityTitle = document.querySelector(".activity-title");
+const formActivity = document.querySelector("#form-activity");
 
 let counterDisplay = document.querySelector("#counterDisplay");
 let counter = 0;
 let totalCounter = 0;
+let activity, clonedForm;
 
 const arrBtnMovement = document.querySelectorAll(".movement-widget__btn");
 
@@ -26,7 +28,7 @@ btnPlus.addEventListener("click", () => {
 });
 
 btnMinus.addEventListener("click", () => {
-	if (!totalCounter || totalCounter <= 0) return; // ?
+	if (totalCounter <= 0) return;
 
 	totalCounter--;
 	localStorage.setItem("totalCounter", totalCounter);
@@ -51,11 +53,22 @@ btnClear.addEventListener("click", () => {
 	location.reload();
 });
 
+// Pick an activity function
 arrBtnMovement.forEach((btn) => {
 	btn.addEventListener("click", function (e) {
-		let activity = this.dataset.activity;
-		activityTitle.textContent = activity + ":";
+		activity = this.dataset.activity;
 
+		activity = this.dataset.activity.toLowerCase().replace(" ", "");
+
+		console.log(activity);
+
+		//
+		clonedForm = formActivity.cloneNode(true);
+		clonedForm.setAttribute("data-form", `form-${activity}`);
+		clonedForm.setAttribute("id", `form-${activity}`);
+		activityTitle.textContent = activity + ":";
+		//
+		document.querySelector(".main-section").appendChild(clonedForm);
 		this.classList.toggle("is-active");
 	});
 });
