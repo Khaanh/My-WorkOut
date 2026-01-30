@@ -58,15 +58,18 @@ arrBtnMovement.forEach((btn) => {
 	btn.addEventListener("click", function (e) {
 		activity = this.dataset.activity;
 
-		activity = this.dataset.activity.toLowerCase().replace(" ", "");
-
 		console.log(activity);
 
 		//
 		clonedForm = formActivity.cloneNode(true);
+
+		clonedForm.querySelector(".activity-title").textContent = activity + ": ";
+		activity = this.dataset.activity.toLowerCase().replace(" ", "");
+
 		clonedForm.setAttribute("data-form", `form-${activity}`);
 		clonedForm.setAttribute("id", `form-${activity}`);
-		activityTitle.textContent = activity + ":";
+
+		// activityTitle.textContent = activity + ":";
 		//
 		document.querySelector(".main-section").appendChild(clonedForm);
 		this.classList.toggle("is-active");
