@@ -11,7 +11,7 @@ let counter = 0;
 let totalCounter = 0;
 let activity, clonedForm;
 
-const arrBtnMovement = document.querySelectorAll(".movement-widget__btn");
+const listBtnMovement = document.querySelectorAll(".movements-list__btn");
 
 document.addEventListener("DOMContentLoaded", () => {
 	counterDisplay.textContent = totalCounter = localStorage.getItem(
@@ -54,7 +54,7 @@ btnClear.addEventListener("click", () => {
 });
 
 // Pick an activity function
-arrBtnMovement.forEach((btn) => {
+listBtnMovement.forEach((btn) => {
 	btn.addEventListener("click", function (e) {
 		activity = this.dataset.activity;
 

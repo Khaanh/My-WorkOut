@@ -95,19 +95,27 @@ h1 {
 	top: 0;
 	bottom: 0;
 	padding: 12px;
+	width: 100%;
+	background-color: rgb(0 0 0 / 90%);
+
+	@media only screen and (min-width: 576px) {
+		max-width: 320px;
+	}
 
 	&__control {
 		margin-bottom: 24px;
 	}
+}
 
-	&__list {
-		list-style: none;
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-	}
+.movements-list {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	// &__list {
+	// }
 
-	&__el {
+	&__item {
 		margin-bottom: 14px;
 		&:last-child {
 			margin-bottom: 0;
@@ -121,12 +129,11 @@ h1 {
 		opacity: 0.8;
 
 		&.is-active {
-			border-color: #2c3e50;
 			border-color: #8e44ad;
 		}
 	}
 
-	&__txt {
+	&__title {
 		font-size: 24px;
 	}
 

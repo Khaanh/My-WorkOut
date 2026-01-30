@@ -325,6 +325,8 @@ h1 {
 
 .counter-form {
   text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
 }
 .counter-form__container {
   display: flex;
@@ -347,36 +349,43 @@ h1 {
   top: 0;
   bottom: 0;
   padding: 12px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+@media only screen and (min-width: 576px) {
+  .movement-widget {
+    max-width: 320px;
+  }
 }
 .movement-widget__control {
   margin-bottom: 24px;
 }
-.movement-widget__list {
+
+.movements-list {
   list-style: none;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
-.movement-widget__el {
+.movements-list__item {
   margin-bottom: 14px;
 }
-.movement-widget__el:last-child {
+.movements-list__item:last-child {
   margin-bottom: 0;
 }
-.movement-widget__btn {
+.movements-list__btn {
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0.8;
 }
-.movement-widget__btn.is-active {
-  border-color: #2c3e50;
+.movements-list__btn.is-active {
   border-color: #8e44ad;
 }
-.movement-widget__txt {
+.movements-list__title {
   font-size: 24px;
 }
-.movement-widget__icon {
+.movements-list__icon {
   display: flex;
   width: 34px;
   margin-left: 8px;
