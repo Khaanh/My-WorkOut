@@ -91,32 +91,38 @@ h1 {
 
 .movement-widget {
 	position: fixed;
-	left: 0;
+	left: -320px;
 	top: 0;
 	bottom: 0;
 	padding: 12px;
 	width: 100%;
+	max-width: 320px;
 	background-color: rgb(0 0 0 / 90%);
+	transition: all 0.2s ease-in;
 
-	@media only screen and (min-width: 576px) {
-		max-width: 320px;
+	&.is-hidden {
+		left: 0;
 	}
 
 	&__control {
 		position: absolute;
 		top: 0;
+		right: -78px;
 		margin: 12px;
+		transition: all 0.1s ease-in;
 
-		&.control-close {
+		&.is-active {
 			right: 0;
-
-			@media only screen and (min-width: 576px) {
-				right: -78px;
-			}
 		}
 
-		&.control-open {
-			left: 0;
+		&--icon {
+			display: inline-block;
+			transition: all 0.1s ease-in;
+			transform: scale(1);
+
+			&.is-reverse {
+				transform: scale(-1);
+			}
 		}
 	}
 }

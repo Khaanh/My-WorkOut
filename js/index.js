@@ -3,6 +3,7 @@ const btnPlus = document.querySelector("#btnPlus");
 const btnMinus = document.querySelector("#btnMinus");
 const btnSave = document.querySelector("#btnSave");
 const btnClear = document.querySelector(".clear");
+const btnToggleWidget = document.querySelector("#btnToggleWidget");
 const activityTitle = document.querySelector(".activity-title");
 const formActivity = document.querySelector("#form-activity");
 
@@ -74,4 +75,12 @@ listBtnMovement.forEach((btn) => {
 		document.querySelector(".main-section").appendChild(clonedForm);
 		this.classList.toggle("is-active");
 	});
+});
+
+btnToggleWidget.addEventListener("click", function (e) {
+	this.parentElement.classList.toggle("is-hidden");
+	this.classList.toggle("is-active");
+	this.querySelector(".movement-widget__control--icon").classList.toggle(
+		"is-reverse",
+	);
 });

@@ -345,33 +345,35 @@ h1 {
 
 .movement-widget {
   position: fixed;
-  left: 0;
+  left: -320px;
   top: 0;
   bottom: 0;
   padding: 12px;
   width: 100%;
+  max-width: 320px;
   background-color: rgba(0, 0, 0, 0.9);
+  transition: all 0.2s ease-in;
 }
-@media only screen and (min-width: 576px) {
-  .movement-widget {
-    max-width: 320px;
-  }
+.movement-widget.is-hidden {
+  left: 0;
 }
 .movement-widget__control {
   position: absolute;
   top: 0;
+  right: -78px;
   margin: 12px;
+  transition: all 0.1s ease-in;
 }
-.movement-widget__control.control-close {
+.movement-widget__control.is-active {
   right: 0;
 }
-@media only screen and (min-width: 576px) {
-  .movement-widget__control.control-close {
-    right: -78px;
-  }
+.movement-widget__control--icon {
+  display: inline-block;
+  transition: all 0.1s ease-in;
+  transform: scale(1);
 }
-.movement-widget__control.control-open {
-  left: 0;
+.movement-widget__control--icon.is-reverse {
+  transform: scale(-1);
 }
 
 .movements-list {
