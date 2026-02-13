@@ -117,7 +117,9 @@ h1 {
 		transition: all 0.1s ease-in;
 
 		&.is-active {
-			right: 0;
+			// right: 0;
+			left: 0;
+			right: auto;
 		}
 
 		&--icon {
