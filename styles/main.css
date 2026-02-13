@@ -358,7 +358,20 @@ h1 {
   }
 }
 .movement-widget__control {
-  margin-bottom: 24px;
+  position: absolute;
+  top: 0;
+  margin: 12px;
+}
+.movement-widget__control.control-close {
+  right: 0;
+}
+@media only screen and (min-width: 576px) {
+  .movement-widget__control.control-close {
+    right: -78px;
+  }
+}
+.movement-widget__control.control-open {
+  left: 0;
 }
 
 .movements-list {
@@ -366,9 +379,11 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin: 74px 0;
 }
 .movements-list__item {
-  margin-bottom: 14px;
+  margin-bottom: 24px;
+  width: 100%;
 }
 .movements-list__item:last-child {
   margin-bottom: 0;
@@ -378,6 +393,7 @@ h1 {
   align-items: center;
   justify-content: center;
   opacity: 0.8;
+  width: 100%;
 }
 .movements-list__btn.is-active {
   border-color: #8e44ad;
