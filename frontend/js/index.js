@@ -1,5 +1,3 @@
-const uid = new ShortUniqueId({ length: 13 });
-
 const counterInput = document.querySelector("#counterInput");
 const btnPlus = document.querySelector("#btnPlus");
 const btnMinus = document.querySelector("#btnMinus");
@@ -12,7 +10,7 @@ const formActivity = document.querySelector("#form-activity");
 let counterDisplay = document.querySelector("#counterDisplay");
 let counter = 0;
 let totalCounter = 0;
-let activity, clonedForm, randomId;
+let activity, clonedForm;
 
 const listBtnMovement = document.querySelectorAll(".movements-list__btn");
 
@@ -60,16 +58,20 @@ btnClear.addEventListener("click", () => {
 listBtnMovement.forEach((btn) => {
 	btn.addEventListener("click", function (e) {
 		activity = this.dataset.activity;
-		randomId = uid.rnd();
 
+		console.log(activity);
+
+		//
 		clonedForm = formActivity.cloneNode(true);
 
 		clonedForm.querySelector(".activity-title").textContent = activity + ": ";
 		activity = this.dataset.activity.toLowerCase().replace(" ", "");
 
-		clonedForm.setAttribute("data-form", `form-${activity}-${randomId}`);
-		clonedForm.setAttribute("id", `form-${activity}-${randomId}`);
+		clonedForm.setAttribute("data-form", `form-${activity}`);
+		clonedForm.setAttribute("id", `form-${activity}`);
 
+		// activityTitle.textContent = activity + ":";
+		//
 		document.querySelector(".main-section").appendChild(clonedForm);
 		this.classList.toggle("is-active");
 	});
