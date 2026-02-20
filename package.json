@@ -1,0 +1,22 @@
+{
+  "name": "my-workout",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Khaanh/My-WorkOut.git"
+  },
+  "author": "Nguyen Ha Khanh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Khaanh/My-WorkOut/issues"
+  },
+  "homepage": "https://github.com/Khaanh/My-WorkOut#readme",
+  "description": "",
+  "dependencies": {
+    "short-unique-id": "^5.3.2"
+  }
+}
