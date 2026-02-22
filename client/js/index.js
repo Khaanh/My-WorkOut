@@ -1,4 +1,9 @@
 const uid = new ShortUniqueId({ length: 13 });
+const uidNumArr = Array.from({ length: 10 }, (_, i) => i + 1);
+const uidAlphabet = "abcdefghijklmnopqrstuvwxyz";
+
+console.log(uidNumArr);
+console.log(uidAlphabet.split(""));
 
 const counterInput = document.querySelector("#counterInput");
 const btnPlus = document.querySelector("#btnPlus");
@@ -24,13 +29,24 @@ document.addEventListener("DOMContentLoaded", () => {
 		: 0;
 });
 
-btnPlus.addEventListener("click", () => {
+function generateRandomId(length, str, num) {}
+
+// const uid = Array.from()
+
+// formActivity.addEventListener("input", function (e) {
+// 	const { input, value } = e.target;
+// 	console.log(e.target);
+
+// 	console.log(input, value);
+// });
+
+btnPlus.addEventListener("click", function () {
 	totalCounter++;
 	localStorage.setItem("totalCounter", totalCounter);
 	counterDisplay.textContent = totalCounter;
 });
 
-btnMinus.addEventListener("click", () => {
+btnMinus.addEventListener("click", function () {
 	if (totalCounter <= 0) return;
 
 	totalCounter--;
@@ -38,7 +54,7 @@ btnMinus.addEventListener("click", () => {
 	counterDisplay.textContent = totalCounter;
 });
 
-btnSave.addEventListener("click", () => {
+btnSave.addEventListener("click", function () {
 	if (!counterInput.value) return;
 
 	totalCounter = Number(counterInput.value)
@@ -51,7 +67,7 @@ btnSave.addEventListener("click", () => {
 	counterInput.value = "";
 });
 
-btnClear.addEventListener("click", () => {
+btnClear.addEventListener("click", function () {
 	localStorage.clear();
 	location.reload();
 });
