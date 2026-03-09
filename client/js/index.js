@@ -21,7 +21,7 @@ let activity, clonedForm, randomId;
 
 const listBtnMovement = document.querySelectorAll(".movements-list__btn");
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
 	counterDisplay.textContent = totalCounter = localStorage.getItem(
 		"totalCounter",
 	)
