@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	counterDisplay.textContent = totalCounter = localStorage.getItem(
 		"totalCounter",
 	)
-		? localStorage.getItem("totalCounter")
+		? Number(localStorage.getItem("totalCounter"))
 		: 0;
 });
 
