@@ -12,7 +12,7 @@ const btnSave = document.querySelector("#btnSave");
 const btnClear = document.querySelector(".clear");
 const btnToggleWidget = document.querySelector("#btnToggleWidget");
 const activityTitle = document.querySelector(".activity-title");
-const formActivity = document.querySelector("#form-activity");
+const formDefault = document.querySelector("#formDefault");
 
 let counterDisplay = document.querySelector("#counterDisplay");
 let counter = 0;
@@ -33,28 +33,51 @@ function generateRandomId(length, str, num) {}
 
 // const uid = Array.from()
 
-// formActivity.addEventListener("input", function (e) {
+// formDefault.addEventListener("input", function (e) {
 // 	const { input, value } = e.target;
 // 	console.log(e.target);
 
 // 	console.log(input, value);
 // });
 
-btnPlus.addEventListener("click", function () {
+formDefault.addEventListener("click", function (e) {
+	const targetEl = e.target;
+	console.log(targetEl.tagName);
+
+	// if (targetEl.tagName === "BUTTON" && targetEl.id === "btnPlus") {
+	// 	btnPlusFunc();
+	// }
+
+	// if (targetEl.tagName === "BUTTON" && targetEl.id === "btnMinus") {
+	// 	btnMinusFunc();
+	// }
+
+	// if (targetEl.tagName === "BUTTON" && targetEl.id === "btnSave") {
+	// 	btnSaveFunc();
+	// }
+
+	if (targetEl.tagName !== "BUTTON") return;
+
+	if (targetEl.id === "btnPlus") btnPlusFunc();
+	if (targetEl.id === "btnMinus") btnMinusFunc();
+	if (targetEl.id === "btnSave") btnSaveFunc();
+});
+
+function btnPlusFunc() {
 	totalCounter++;
 	localStorage.setItem("totalCounter", totalCounter);
 	counterDisplay.textContent = totalCounter;
-});
+}
 
-btnMinus.addEventListener("click", function () {
+function btnMinusFunc() {
 	if (totalCounter <= 0) return;
 
 	totalCounter--;
 	localStorage.setItem("totalCounter", totalCounter);
 	counterDisplay.textContent = totalCounter;
-});
+}
 
-btnSave.addEventListener("click", function () {
+function btnSaveFunc() {
 	if (!counterInput.value) return;
 
 	totalCounter = Number(counterInput.value)
@@ -65,7 +88,34 @@ btnSave.addEventListener("click", function () {
 	localStorage.setItem("totalCounter", totalCounter);
 	counterInput.focus();
 	counterInput.value = "";
-});
+}
+
+// btnPlus.addEventListener("click", function () {
+// 	totalCounter++;
+// 	localStorage.setItem("totalCounter", totalCounter);
+// 	counterDisplay.textContent = totalCounter;
+// });
+
+// btnMinus.addEventListener("click", function () {
+// 	if (totalCounter <= 0) return;
+
+// 	totalCounter--;
+// 	localStorage.setItem("totalCounter", totalCounter);
+// 	counterDisplay.textContent = totalCounter;
+// });
+
+// btnSave.addEventListener("click", function () {
+// 	if (!counterInput.value) return;
+
+// 	totalCounter = Number(counterInput.value)
+// 		? totalCounter + Number(counterInput.value)
+// 		: totalCounter + Number(counterInput.value);
+// 	counterDisplay.textContent = totalCounter;
+
+// 	localStorage.setItem("totalCounter", totalCounter);
+// 	counterInput.focus();
+// 	counterInput.value = "";
+// });
 
 btnClear.addEventListener("click", function () {
 	localStorage.clear();
@@ -81,7 +131,7 @@ listBtnMovement.forEach((btn) => {
 		console.log(activity);
 
 		//
-		clonedForm = formActivity.cloneNode(true);
+		clonedForm = formDefault.cloneNode(true);
 
 		clonedForm.querySelector(".activity-title").textContent = activity + ": ";
 		activity = this.dataset.activity.toLowerCase().replace(" ", "");
@@ -103,3 +153,34 @@ btnToggleWidget.addEventListener("click", function (e) {
 		"is-reverse",
 	);
 });
+
+const formId = document.querySelector("#formId");
+const inp = document.querySelector("#inp");
+let count = 0;
+
+formId.addEventListener("click", function (e) {
+	const el = e.target;
+	console.log(e.target);
+	console.log(e);
+	console.log(el.id);
+
+	if (el.id === "plus") {
+		plusCount();
+	}
+
+	if (el.id === "minus") {
+		minusCount();
+	}
+
+	e.preventDefault();
+});
+
+function plusCount() {
+	count++;
+	inp.value = count;
+}
+
+function minusCount() {
+	count--;
+	inp.value = count;
+}
