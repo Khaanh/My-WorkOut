@@ -42,7 +42,6 @@ function generateRandomId(length, str, num) {}
 
 formDefault.addEventListener("click", function (e) {
 	const targetEl = e.target;
-	console.log(targetEl.tagName);
 
 	// if (targetEl.tagName === "BUTTON" && targetEl.id === "btnPlus") {
 	// 	btnPlusFunc();
@@ -58,18 +57,18 @@ formDefault.addEventListener("click", function (e) {
 
 	if (targetEl.tagName !== "BUTTON") return;
 
-	if (targetEl.id === "btnPlus") btnPlusFunc();
-	if (targetEl.id === "btnMinus") btnMinusFunc();
-	if (targetEl.id === "btnSave") btnSaveFunc();
+	if (targetEl.id === "btnPlus") incrCounter();
+	if (targetEl.id === "btnMinus") decrCounter();
+	if (targetEl.id === "btnSave") saveCounter();
 });
 
-function btnPlusFunc() {
+function incrCounter() {
 	totalCounter++;
 	localStorage.setItem("totalCounter", totalCounter);
 	counterDisplay.textContent = totalCounter;
 }
 
-function btnMinusFunc() {
+function decrCounter() {
 	if (totalCounter <= 0) return;
 
 	totalCounter--;
@@ -77,7 +76,7 @@ function btnMinusFunc() {
 	counterDisplay.textContent = totalCounter;
 }
 
-function btnSaveFunc() {
+function saveCounter() {
 	if (!counterInput.value) return;
 
 	totalCounter = Number(counterInput.value)
@@ -154,33 +153,33 @@ btnToggleWidget.addEventListener("click", function (e) {
 	);
 });
 
-const formId = document.querySelector("#formId");
-const inp = document.querySelector("#inp");
-let count = 0;
+// const formId = document.querySelector("#formId");
+// const inp = document.querySelector("#inp");
+// let count = 0;
 
-formId.addEventListener("click", function (e) {
-	const el = e.target;
-	console.log(e.target);
-	console.log(e);
-	console.log(el.id);
+// formId.addEventListener("click", function (e) {
+// 	const el = e.target;
+// 	console.log(e.target);
+// 	console.log(e);
+// 	console.log(el.id);
 
-	if (el.id === "plus") {
-		plusCount();
-	}
+// 	if (el.id === "plus") {
+// 		plusCount();
+// 	}
 
-	if (el.id === "minus") {
-		minusCount();
-	}
+// 	if (el.id === "minus") {
+// 		minusCount();
+// 	}
 
-	e.preventDefault();
-});
+// 	e.preventDefault();
+// });
 
-function plusCount() {
-	count++;
-	inp.value = count;
-}
+// function plusCount() {
+// 	count++;
+// 	inp.value = count;
+// }
 
-function minusCount() {
-	count--;
-	inp.value = count;
-}
+// function minusCount() {
+// 	count--;
+// 	inp.value = count;
+// }
