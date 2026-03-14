@@ -12,9 +12,10 @@ const btnSave = document.querySelector("#btnSave");
 const btnClear = document.querySelector(".clear");
 const btnToggleWidget = document.querySelector("#btnToggleWidget");
 const activityTitle = document.querySelector(".activity-title");
-const formDefault = document.querySelector("#formDefault");
+const formDefault = document.querySelector(".counter-form");
 
 let counterDisplay = document.querySelector("#counterDisplay");
+let getRandomId = null;
 let counter = 0;
 let totalCounter = 0;
 let activity, clonedForm, randomId;
@@ -40,8 +41,9 @@ function generateRandomId(length, str, num) {}
 // 	console.log(input, value);
 // });
 
-formDefault.addEventListener("click", function (e) {
+window.addEventListener("click", function (e) {
 	const targetEl = e.target;
+	console.log(targetEl);
 
 	// if (targetEl.tagName === "BUTTON" && targetEl.id === "btnPlus") {
 	// 	btnPlusFunc();
@@ -126,6 +128,7 @@ listBtnMovement.forEach((btn) => {
 	btn.addEventListener("click", function (e) {
 		activity = this.dataset.activity;
 		randomId = uid.rnd();
+		getRandomId = randomId;
 
 		console.log(activity);
 
@@ -137,6 +140,10 @@ listBtnMovement.forEach((btn) => {
 
 		clonedForm.setAttribute("data-form", `form-${activity}-${randomId}`);
 		clonedForm.setAttribute("id", `form-${activity}-${randomId}`);
+
+		clonedForm
+			.querySelector("#counterDisplay")
+			.setAttribute("id", `counterDisplay-${randomId}`);
 
 		// activityTitle.textContent = activity + ":";
 		//
