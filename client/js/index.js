@@ -11,11 +11,11 @@ const btnMinus = document.querySelector("#btnMinus");
 const btnSave = document.querySelector("#btnSave");
 const btnClear = document.querySelector(".clear");
 const btnToggleWidget = document.querySelector("#btnToggleWidget");
-const activityTitle = document.querySelector(".activity-title");
-const formDefault = document.querySelector(".counter-form");
+const activityTitle = document.querySelector("#activityTitle");
+const formDefault = document.querySelector("#formDefault");
 
-let counterDisplay = document.querySelector("#counterDisplay");
 let getRandomId = null;
+let counterDisplay = document.querySelector("#counterDisplay");
 let counter = 0;
 let totalCounter = 0;
 let activity, clonedForm, randomId;
@@ -131,11 +131,12 @@ listBtnMovement.forEach((btn) => {
 		getRandomId = randomId;
 
 		console.log(activity);
+		console.log(getRandomId);
 
 		//
 		clonedForm = formDefault.cloneNode(true);
 
-		clonedForm.querySelector(".activity-title").textContent = activity + ": ";
+		clonedForm.querySelector("#activityTitle").textContent = activity + ": ";
 		activity = this.dataset.activity.toLowerCase().replace(" ", "");
 
 		clonedForm.setAttribute("data-form", `form-${activity}-${randomId}`);
@@ -145,8 +146,10 @@ listBtnMovement.forEach((btn) => {
 			.querySelector("#counterDisplay")
 			.setAttribute("id", `counterDisplay-${randomId}`);
 
-		// activityTitle.textContent = activity + ":";
-		//
+		clonedForm
+			.querySelector("#activityTitle")
+			.setAttribute("id", `activityTitle-${randomId}`);
+
 		document.querySelector(".main-section").appendChild(clonedForm);
 		this.classList.toggle("is-active");
 	});

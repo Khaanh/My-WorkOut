@@ -342,6 +342,22 @@ h1 {
   min-width: 38px;
   font-size: 28px;
 }
+.counter-form__control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.counter-form__title {
+  margin: 0;
+  margin-right: 10px;
+  font-size: 38px;
+  font-weight: 600;
+}
+.counter-form__number {
+  font-size: 38px;
+  margin: 0;
+}
 
 .movement-widget {
   position: fixed;
