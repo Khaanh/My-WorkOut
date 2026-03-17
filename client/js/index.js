@@ -13,6 +13,7 @@ const btnClear = document.querySelector(".clear");
 const btnToggleWidget = document.querySelector("#btnToggleWidget");
 const activityTitle = document.querySelector("#activityTitle");
 const formDefault = document.querySelector("#formDefault");
+const formCounter = document.querySelector(".form-counter");
 
 let getRandomId = null;
 let counterDisplay = document.querySelector("#counterDisplay");
@@ -124,33 +125,11 @@ btnToggleWidget.addEventListener("click", function (e) {
 	);
 });
 
-// const formId = document.querySelector("#formId");
-// const inp = document.querySelector("#inp");
-// let count = 0;
+// ----
+formCounter.addEventListener("click", function (e) {
+	let targetEl = e.target;
 
-// formId.addEventListener("click", function (e) {
-// 	const el = e.target;
-// 	console.log(e.target);
-// 	console.log(e);
-// 	console.log(el.id);
+	console.log(this);
 
-// 	if (el.id === "plus") {
-// 		plusCount();
-// 	}
-
-// 	if (el.id === "minus") {
-// 		minusCount();
-// 	}
-
-// 	e.preventDefault();
-// });
-
-// function plusCount() {
-// 	count++;
-// 	inp.value = count;
-// }
-
-// function minusCount() {
-// 	count--;
-// 	inp.value = count;
-// }
+	// console.log(e);
+});

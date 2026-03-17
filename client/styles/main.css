@@ -323,38 +323,38 @@ h1 {
   margin: 0;
 }
 
-.counter-form {
+.form-counter {
   text-align: center;
   margin-bottom: 30px;
   padding-bottom: 30px;
 }
-.counter-form__container {
+.form-counter__container {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 8px;
 }
-.counter-form__input {
+.form-counter__input {
   height: 42px;
   margin: 0 8px;
 }
-.counter-form__btn {
+.form-counter__btn {
   min-width: 38px;
   font-size: 28px;
 }
-.counter-form__control {
+.form-counter__control {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 24px;
 }
-.counter-form__title {
+.form-counter__title {
   margin: 0;
   margin-right: 10px;
   font-size: 38px;
   font-weight: 600;
 }
-.counter-form__number {
+.form-counter__number {
   font-size: 38px;
   margin: 0;
 }

@@ -77,37 +77,39 @@
 				<div class="container">
 					<div class="main-section">
 						<form
-							class="counter-form"
+							class="form-counter"
 							data-form="form-pullups"
 							id="formDefault"
 							action=""
 						>
-							<div class="counter-form__control">
-								<h2 class="counter-form__title" id="activityTitle">
+							<div class="form-counter__control">
+								<h2 class="form-counter__title" id="activityTitle">
 									Pull ups:
 								</h2>
-								<p class="counter-form__number">
+								<p class="form-counter__number">
 									<span id="counterDisplay">0</span>
 								</p>
 							</div>
 
-							<div class="counter-form__container">
+							<div class="form-counter__container">
 								<button
 									type="button"
-									class="counter-form__btn btn-plus"
+									data-btn="increaseCount"
+									class="form-counter__btn btn-plus"
 									id="btnPlus"
 								>
 									+ 1
 								</button>
 								<input
 									id="counterInput"
-									class="counter-form__input"
+									class="form-counter__input"
 									type="number"
 									placeholder="0"
 								/>
 								<button
 									type="button"
-									class="counter-form__btn btn-minus"
+									data-btn="decreaseCount"
+									class="form-counter__btn btn-minus"
 									id="btnMinus"
 								>
 									- 1
@@ -116,7 +118,8 @@
 
 							<button
 								type="button"
-								class="counter-form__btn btn-save"
+								data-btn="saveCount"
+								class="form-counter__btn btn-save"
 								id="btnSave"
 							>
 								Save
