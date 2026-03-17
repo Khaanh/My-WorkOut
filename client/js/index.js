@@ -45,18 +45,6 @@ window.addEventListener("click", function (e) {
 	const targetEl = e.target;
 	console.log(targetEl);
 
-	// if (targetEl.tagName === "BUTTON" && targetEl.id === "btnPlus") {
-	// 	btnPlusFunc();
-	// }
-
-	// if (targetEl.tagName === "BUTTON" && targetEl.id === "btnMinus") {
-	// 	btnMinusFunc();
-	// }
-
-	// if (targetEl.tagName === "BUTTON" && targetEl.id === "btnSave") {
-	// 	btnSaveFunc();
-	// }
-
 	if (targetEl.tagName !== "BUTTON") return;
 
 	if (targetEl.id === "btnPlus") incrCounter();
@@ -90,33 +78,6 @@ function saveCounter() {
 	counterInput.focus();
 	counterInput.value = "";
 }
-
-// btnPlus.addEventListener("click", function () {
-// 	totalCounter++;
-// 	localStorage.setItem("totalCounter", totalCounter);
-// 	counterDisplay.textContent = totalCounter;
-// });
-
-// btnMinus.addEventListener("click", function () {
-// 	if (totalCounter <= 0) return;
-
-// 	totalCounter--;
-// 	localStorage.setItem("totalCounter", totalCounter);
-// 	counterDisplay.textContent = totalCounter;
-// });
-
-// btnSave.addEventListener("click", function () {
-// 	if (!counterInput.value) return;
-
-// 	totalCounter = Number(counterInput.value)
-// 		? totalCounter + Number(counterInput.value)
-// 		: totalCounter + Number(counterInput.value);
-// 	counterDisplay.textContent = totalCounter;
-
-// 	localStorage.setItem("totalCounter", totalCounter);
-// 	counterInput.focus();
-// 	counterInput.value = "";
-// });
 
 btnClear.addEventListener("click", function () {
 	localStorage.clear();
