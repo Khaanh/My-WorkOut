@@ -16,7 +16,8 @@ const formDefault = document.querySelector("#formDefault");
 const formCounter = document.querySelector(".form-counter");
 
 let getRandomId = null;
-let counterDisplay = document.querySelector("#counterDisplay");
+// let counterDisplay = document.querySelector("#counterDisplay");
+let counterDisplay = document.querySelector(".form-counter__display");
 let counter = 0;
 let totalCounter = 0;
 let activity, clonedForm, randomId;
@@ -42,24 +43,27 @@ function generateRandomId(length, str, num) {}
 // 	console.log(input, value);
 // });
 
-window.addEventListener("click", function (e) {
-	const targetEl = e.target;
-	console.log(targetEl);
+// window.addEventListener("click", function (e) {
+// 	const targetEl = e.target;
+// 	console.log(targetEl);
 
-	if (targetEl.tagName !== "BUTTON") return;
+// 	if (targetEl.tagName !== "BUTTON") return;
 
-	if (targetEl.id === "btnPlus") incrCounter();
-	if (targetEl.id === "btnMinus") decrCounter();
-	if (targetEl.id === "btnSave") saveCounter();
-});
+// 	if (targetEl.id === "btnPlus") incrCounter();
+// 	if (targetEl.id === "btnMinus") decrCounter();
+// 	if (targetEl.id === "btnSave") saveCounter();
+// });
 
-function incrCounter() {
+function incrCounter(el) {
 	totalCounter++;
 	localStorage.setItem("totalCounter", totalCounter);
+	// el.querySelector(".form-counter__display").textContent = totalCounter;
+	el.closest("form").querySelector("counterDisplay");
 	counterDisplay.textContent = totalCounter;
+	console.log("el:", el);
 }
 
-function decrCounter() {
+function decrCounter(el) {
 	if (totalCounter <= 0) return;
 
 	totalCounter--;
@@ -67,7 +71,7 @@ function decrCounter() {
 	counterDisplay.textContent = totalCounter;
 }
 
-function saveCounter() {
+function saveCounter(el) {
 	if (!counterInput.value) return;
 
 	totalCounter = Number(counterInput.value)
@@ -126,10 +130,18 @@ btnToggleWidget.addEventListener("click", function (e) {
 });
 
 // ----
-formCounter.addEventListener("click", function (e) {
-	let targetEl = e.target;
+function start() {
+	formCounter.addEventListener("click", function (e) {
+		let targetEl = e.target;
 
-	console.log(this);
+		if (targetEl.tagName !== "BUTTON") return;
 
-	// console.log(e);
-});
+		console.log("this:", this);
+
+		if (targetEl.classList.contains("btn-plus")) incrCounter(this);
+		if (targetEl.classList.contains("btn-minus")) decrCounter(this);
+		if (targetEl.classList.contains("btn-save")) saveCounter(this);
+	});
+}
+
+start();
