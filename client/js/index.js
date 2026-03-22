@@ -2,25 +2,23 @@ const uid = new ShortUniqueId({ length: 13 });
 const uidNumArr = Array.from({ length: 10 }, (_, i) => i + 1);
 const uidAlphabet = "abcdefghijklmnopqrstuvwxyz";
 
-console.log(uidNumArr);
-console.log(uidAlphabet.split(""));
-
 const counterInput = document.querySelector("#counterInput");
-const btnPlus = document.querySelector("#btnPlus");
-const btnMinus = document.querySelector("#btnMinus");
-const btnSave = document.querySelector("#btnSave");
+// const btnPlus = document.querySelector("#btnPlus");
+// const btnMinus = document.querySelector("#btnMinus");
+// const btnSave = document.querySelector("#btnSave");
 const btnClear = document.querySelector(".clear");
 const btnToggleWidget = document.querySelector("#btnToggleWidget");
-const activityTitle = document.querySelector("#activityTitle");
+// const activityTitle = document.querySelector("#activityTitle");
 const formDefault = document.querySelector("#formDefault");
-const formCounter = document.querySelector(".form-counter");
+// const formCounter = document.querySelector(".form-counter");
 
 let getRandomId = null;
-// let counterDisplay = document.querySelector("#counterDisplay");
-let counterDisplay = document.querySelector(".form-counter__display");
+let counterDisplay = document.querySelector("#counterDisplay");
+// let counterDisplay = document.querySelector(".form-counter__display");
 let counter = 0;
 let totalCounter = 0;
-let activity, clonedForm, randomId;
+let activity, clonedForm, randomId, form;
+// let formCounter, formDisplay;
 
 const listBtnMovement = document.querySelectorAll(".movements-list__btn");
 
@@ -57,9 +55,13 @@ function generateRandomId(length, str, num) {}
 function incrCounter(el) {
 	totalCounter++;
 	localStorage.setItem("totalCounter", totalCounter);
-	// el.querySelector(".form-counter__display").textContent = totalCounter;
-	el.closest("form").querySelector("counterDisplay");
+	form = el.closest("form");
+	counterDisplay = form.querySelector(".form-counter__display");
 	counterDisplay.textContent = totalCounter;
+
+	// el.closest("form").querySelector(".form-counter__display").textContent =
+	// 	totalCounter;
+
 	console.log("el:", el);
 }
 
@@ -96,25 +98,13 @@ listBtnMovement.forEach((btn) => {
 		randomId = uid.rnd();
 		getRandomId = randomId;
 
-		console.log(activity);
-		console.log(getRandomId);
-
-		//
 		clonedForm = formDefault.cloneNode(true);
 
-		clonedForm.querySelector("#activityTitle").textContent = activity + ": ";
-		activity = this.dataset.activity.toLowerCase().replace(" ", "");
+		// clonedForm.querySelector("#activityTitle").textContent = activity + ": ";
+		// activity = this.dataset.activity.toLowerCase().replace(" ", "");
 
-		clonedForm.setAttribute("data-form", `form-${activity}-${randomId}`);
-		clonedForm.setAttribute("id", `form-${activity}-${randomId}`);
-
-		clonedForm
-			.querySelector("#counterDisplay")
-			.setAttribute("id", `counterDisplay-${randomId}`);
-
-		clonedForm
-			.querySelector("#activityTitle")
-			.setAttribute("id", `activityTitle-${randomId}`);
+		clonedForm.setAttribute("data-id-form", `${randomId}`);
+		clonedForm.removeAttribute("id");
 
 		document.querySelector(".main-section").appendChild(clonedForm);
 		this.classList.toggle("is-active");
@@ -130,18 +120,15 @@ btnToggleWidget.addEventListener("click", function (e) {
 });
 
 // ----
-function start() {
-	formCounter.addEventListener("click", function (e) {
-		let targetEl = e.target;
+document.addEventListener("click", function (e) {
+	let targetEl = e.target;
 
-		if (targetEl.tagName !== "BUTTON") return;
+	if (targetEl.tagName !== "BUTTON") return;
 
-		console.log("this:", this);
+	// console.log("this:", this);
+	console.log(targetEl);
 
-		if (targetEl.classList.contains("btn-plus")) incrCounter(this);
-		if (targetEl.classList.contains("btn-minus")) decrCounter(this);
-		if (targetEl.classList.contains("btn-save")) saveCounter(this);
-	});
-}
-
-start();
+	if (targetEl.classList.contains("btn-plus")) incrCounter(targetEl);
+	if (targetEl.classList.contains("btn-minus")) decrCounter(targetEl);
+	if (targetEl.classList.contains("btn-save")) saveCounter(targetEl);
+});
