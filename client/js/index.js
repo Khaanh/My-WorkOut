@@ -17,7 +17,7 @@ let counterDisplay = document.querySelector("#counterDisplay");
 // let counterDisplay = document.querySelector(".form-counter__display");
 let counter = 0;
 let totalCounter = 0;
-let activity, clonedForm, randomId, form;
+let activity, clonedForm, randomId, form, formID;
 // let formCounter, formDisplay;
 
 const listBtnMovement = document.querySelectorAll(".movements-list__btn");
@@ -54,13 +54,20 @@ function generateRandomId(length, str, num) {}
 
 function incrCounter(el) {
 	totalCounter++;
-	localStorage.setItem("totalCounter", totalCounter);
 	form = el.closest("form");
+	formID = form.dataset.idForm;
+
+	console.log(form.dataset.formId);
+
 	counterDisplay = form.querySelector(".form-counter__display");
+	localStorage.setItem(`totalCounter-${formID}`, totalCounter);
+
 	counterDisplay.textContent = totalCounter;
 
 	// el.closest("form").querySelector(".form-counter__display").textContent =
 	// 	totalCounter;
+
+	// form.closest(".btn-plus").removeAttribute("data-btn");
 
 	console.log("el:", el);
 }
@@ -100,10 +107,12 @@ listBtnMovement.forEach((btn) => {
 
 		clonedForm = formDefault.cloneNode(true);
 
+		clonedForm.querySelector(".form-counter__display").textContent = "0";
+
 		// clonedForm.querySelector("#activityTitle").textContent = activity + ": ";
 		// activity = this.dataset.activity.toLowerCase().replace(" ", "");
 
-		clonedForm.setAttribute("data-id-form", `${randomId}`);
+		clonedForm.setAttribute("data-form-id", `${randomId}`);
 		clonedForm.removeAttribute("id");
 
 		document.querySelector(".main-section").appendChild(clonedForm);
