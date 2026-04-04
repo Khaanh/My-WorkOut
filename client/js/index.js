@@ -8,19 +8,19 @@ const btnToggleWidget = document.querySelector("#btnToggleWidget");
 const formDefault = document.querySelector("#formDefault");
 
 let getRandomId = null;
-let counterDisplay = document.querySelector("#counterDisplay");
+// let counterDisplay = document.querySelector("#counterDisplay");
 let totalCounter = 0;
 let activity, clonedForm, randomId, form, formID;
 
 const listBtnMovement = document.querySelectorAll(".movements-list__btn");
 
-document.addEventListener("DOMContentLoaded", function () {
-	counterDisplay.textContent = totalCounter = localStorage.getItem(
-		"totalCounter",
-	)
-		? Number(localStorage.getItem("totalCounter"))
-		: 0;
-});
+// document.addEventListener("DOMContentLoaded", function () {
+// 	counterDisplay.textContent = totalCounter = localStorage.getItem(
+// 		"totalCounter",
+// 	)
+// 		? Number(localStorage.getItem("totalCounter"))
+// 		: 0;
+// });
 
 function generateRandomId(length, str, num) {}
 
