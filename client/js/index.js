@@ -3,22 +3,14 @@ const uidNumArr = Array.from({ length: 10 }, (_, i) => i + 1);
 const uidAlphabet = "abcdefghijklmnopqrstuvwxyz";
 
 const counterInput = document.querySelector("#counterInput");
-// const btnPlus = document.querySelector("#btnPlus");
-// const btnMinus = document.querySelector("#btnMinus");
-// const btnSave = document.querySelector("#btnSave");
 const btnClear = document.querySelector(".clear");
 const btnToggleWidget = document.querySelector("#btnToggleWidget");
-// const activityTitle = document.querySelector("#activityTitle");
 const formDefault = document.querySelector("#formDefault");
-// const formCounter = document.querySelector(".form-counter");
 
 let getRandomId = null;
 let counterDisplay = document.querySelector("#counterDisplay");
-// let counterDisplay = document.querySelector(".form-counter__display");
-let counter = 0;
 let totalCounter = 0;
 let activity, clonedForm, randomId, form, formID;
-// let formCounter, formDisplay;
 
 const listBtnMovement = document.querySelectorAll(".movements-list__btn");
 
@@ -32,30 +24,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function generateRandomId(length, str, num) {}
 
-// const uid = Array.from()
-
-// formDefault.addEventListener("input", function (e) {
-// 	const { input, value } = e.target;
-// 	console.log(e.target);
-
-// 	console.log(input, value);
-// });
-
-// window.addEventListener("click", function (e) {
-// 	const targetEl = e.target;
-// 	console.log(targetEl);
-
-// 	if (targetEl.tagName !== "BUTTON") return;
-
-// 	if (targetEl.id === "btnPlus") incrCounter();
-// 	if (targetEl.id === "btnMinus") decrCounter();
-// 	if (targetEl.id === "btnSave") saveCounter();
-// });
-
 function incrCounter(el) {
 	totalCounter++;
 	form = el.closest("form");
-	formID = form.dataset.idForm;
+	formID = form.dataset.formId;
 
 	console.log(form.dataset.formId);
 
@@ -63,11 +35,6 @@ function incrCounter(el) {
 	localStorage.setItem(`totalCounter-${formID}`, totalCounter);
 
 	counterDisplay.textContent = totalCounter;
-
-	// el.closest("form").querySelector(".form-counter__display").textContent =
-	// 	totalCounter;
-
-	// form.closest(".btn-plus").removeAttribute("data-btn");
 
 	console.log("el:", el);
 }
@@ -108,10 +75,6 @@ listBtnMovement.forEach((btn) => {
 		clonedForm = formDefault.cloneNode(true);
 
 		clonedForm.querySelector(".form-counter__display").textContent = "0";
-
-		// clonedForm.querySelector("#activityTitle").textContent = activity + ": ";
-		// activity = this.dataset.activity.toLowerCase().replace(" ", "");
-
 		clonedForm.setAttribute("data-form-id", `${randomId}`);
 		clonedForm.removeAttribute("id");
 
@@ -134,7 +97,6 @@ document.addEventListener("click", function (e) {
 
 	if (targetEl.tagName !== "BUTTON") return;
 
-	// console.log("this:", this);
 	console.log(targetEl);
 
 	if (targetEl.classList.contains("btn-plus")) incrCounter(targetEl);
