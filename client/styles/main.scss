@@ -1,6 +1,6 @@
-@import "reset";
-@import "helpers";
-@import "variables";
+@use "reset";
+@use "helpers";
+@use "variables";
 
 .wrapper {
 	max-width: 100%;
@@ -28,6 +28,7 @@ h1 {
 
 .header {
 	margin-bottom: 48px;
+	background-color: red;
 
 	&__container {
 		display: flex;
@@ -46,7 +47,6 @@ h1 {
 }
 
 .control-counter {
-	display: flex;
 	justify-content: center;
 	align-items: center;
 	margin-bottom: 24px;
