@@ -1,7 +1,8 @@
-@use "reset";
-@use "helpers";
-@use "variables";
+@use "./styles/reset";
+@use "./styles/helpers";
+@use "./styles/variables";
 
+// "dev": "concurrently \"vite\" & \"sass --watch styles/main.scss:dist/main.css\"",
 .wrapper {
 	max-width: 100%;
 	width: 100%;
@@ -28,7 +29,6 @@ h1 {
 
 .header {
 	margin-bottom: 48px;
-	background-color: red;
 
 	&__container {
 		display: flex;
@@ -188,9 +188,4 @@ h1 {
 		width: 34px;
 		margin-left: 8px;
 	}
-}
-
-#formId {
-	padding: 60px;
-	margin: 60px;
 }

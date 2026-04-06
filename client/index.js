@@ -1,3 +1,6 @@
+import ShortUniqueId from "short-unique-id";
+import "/index.scss";
+
 const uid = new ShortUniqueId({ length: 13 });
 const uidNumArr = Array.from({ length: 10 }, (_, i) => i + 1);
 const uidAlphabet = "abcdefghijklmnopqrstuvwxyz";
@@ -8,7 +11,7 @@ const btnToggleWidget = document.querySelector("#btnToggleWidget");
 const formDefault = document.querySelector("#formDefault");
 
 let getRandomId = null;
-// let counterDisplay = document.querySelector("#counterDisplay");
+let counterDisplay = document.querySelector("#counterDisplay");
 let totalCounter = 0;
 let activity, clonedForm, randomId, form, formID;
 

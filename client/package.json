@@ -4,10 +4,9 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"dev": "concurrently \"vite\" & \"sass --watch styles/main.scss:dist/main.css\"",
+		"dev": "vite",
 		"build": "vite build",
-		"preview": "vite preview",
-		"sass": "sass --watch styles/main.scss:dist/main.css"
+		"preview": "vite preview"
 	},
 	"repository": {
 		"type": "git",
