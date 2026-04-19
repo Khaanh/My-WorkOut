@@ -1,0 +1,29 @@
+// 1. Built-in modules first
+@use "sass:map";
+@use "sass:math";
+
+$breakpoints: (
+	"sm": 576px,
+	"md": 768px,
+	"lg": 1024px,
+	"xl": 1280px,
+	"xxl": 1536px,
+);
+
+@mixin media($screen, $bp) {
+	$size: map.get($breakpoints, $bp);
+
+	@if $screen == mobile {
+		@media only screen and (min-width: $size) {
+			@content;
+		}
+	} @else if $screen == desk {
+		@media only screen and (max-width: $size) {
+			@content;
+		}
+	}
+}
+
+// @media only screen and (min-width: 768px) {
+// 	flex-direction: row;
+// }

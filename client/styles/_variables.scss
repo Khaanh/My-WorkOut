@@ -1,29 +1,41 @@
-// =====Basic colors=====
-$white: #fff;
-$black: #000;
-$gray: #ccc;
+// ===== Custom vars =====
+$border-radius: 8px;
+$border-width: 1px;
+$border-solid: solid;
+$min-width: 60px;
+
+// ===== Basic colors =====
+$white: #ffffff;
+$black: #000000;
+$dark: #09090b;
 $light: #efefef;
+$gray: #404040;
 $transp: transparent;
-$text: #14120b;
-// $accent: #7f8c8d;
+$rgba-color: rgb(9 9 11 / 93%);
 
-// Custom colors...
-// $text: #2b2b2b;
-// $accent: #06ff79;
-
-// =====Typography base=====
-$main-font: "Nunito", sans-serif;
-$sec-font: "Arial", sans-serif;
-$font-weight: 400;
+// ===== Typography base =====
+$font-primary: "Nunito", sans-serif;
+$font-secondary: "Comfortaa", sans-serif;
+$font-regular: 400;
+$font-medium: 500;
+$font-semiBold: 600;
+$font-bold: 700;
+$font-extraBold: 800;
+$font-black: 900;
 $font-size: 16px;
-$line-height: 1.5;
-$txt-color: $text;
+$line-height: 1.25;
+$text-default: $gray;
+$text-light: $light;
+$text-dark: $dark;
 
-// // =====Typography buttons=====
-// $btn-ff: $main-font;
-// $btn-fz: 14px;
-// $btn-lh: 17px;
-// $btn-fw: 700;
-// $btn-color: $accent;
-// $btn-bgc: $transp;
-// $btn-radius: 50px;
+// ===== Typography buttons =====
+$btn-ff: $font-primary;
+$btn-fz: $font-size;
+$btn-lh: $line-height;
+$btn-fw: $font-regular;
+$btn-color: $text-light;
+$btn-borderRadius: $border-radius;
+$btn-borderWidth: $border-width;
+$btn-borderStyle: $border-solid;
+$btn-borderColor: $light;
+$btn-minWidth: $min-width;

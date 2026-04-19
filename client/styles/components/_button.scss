@@ -1,0 +1,22 @@
+@use "../variables" as *;
+
+.btn {
+	font-family: $btn-ff;
+	font-size: $btn-fz;
+	font-weight: $btn-fw;
+	line-height: $btn-lh;
+	color: $btn-color;
+	border-radius: $btn-borderRadius;
+	border-color: $btn-borderColor;
+	border-width: $btn-borderWidth;
+	border-style: $btn-borderStyle;
+	min-width: $btn-minWidth;
+
+	padding: 10px 14px;
+	background-color: rgb(204 204 204 / 25%);
+	text-align: center;
+	overflow: hidden;
+	opacity: 1;
+	cursor: pointer;
+	transition: all 0.2s linear;
+}
