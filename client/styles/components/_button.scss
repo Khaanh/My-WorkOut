@@ -13,10 +13,19 @@
 	min-width: $btn-minWidth;
 
 	padding: 10px 14px;
-	background-color: rgb(204 204 204 / 25%);
 	text-align: center;
 	overflow: hidden;
-	opacity: 1;
 	cursor: pointer;
+
 	transition: all 0.2s linear;
+	background-color: rgb(204 204 204 / 15%);
+	opacity: 0.9;
+	transform: translateY(0);
+
+	&:hover,
+	&:focus {
+		opacity: 1;
+		background-color: rgb(204 204 204 / 5%);
+		transform: translateY(-1px);
+	}
 }

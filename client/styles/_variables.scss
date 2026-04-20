@@ -7,9 +7,12 @@ $min-width: 60px;
 // ===== Basic colors =====
 $white: #ffffff;
 $black: #000000;
-$dark: #09090b;
+// $dark: #09090b;
+$dark: #020617;
+// $dark: #0f172a;
 $light: #efefef;
-$gray: #404040;
+// $gray: #404040;
+$gray: #e5e7eb;
 $transp: transparent;
 $rgba-color: rgb(9 9 11 / 93%);
 
@@ -33,7 +36,7 @@ $btn-ff: $font-primary;
 $btn-fz: $font-size;
 $btn-lh: $line-height;
 $btn-fw: $font-regular;
-$btn-color: $text-light;
+$btn-color: $white;
 $btn-borderRadius: $border-radius;
 $btn-borderWidth: $border-width;
 $btn-borderStyle: $border-solid;
