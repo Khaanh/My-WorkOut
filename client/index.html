@@ -17,7 +17,7 @@
 			<header class="header">
 				<div class="header__container container">
 					<sidebar class="movement-widget">
-						<button class="movement-widget__control" id="btnToggleWidget">
+						<button class="movement-widget__control btn" id="btnToggleWidget">
 							<span class="movement-widget__control--icon">
 								<img src="./img/right-arrow.png" alt="arrow icon" />
 							</span>
@@ -26,7 +26,7 @@
 							<li class="movements-list__item">
 								<button
 									type="button"
-									class="movements-list__btn is-active"
+									class="movements-list__btn btn is-active"
 									data-activity="pull ups"
 								>
 									<span class="movements-list__title">Pull ups</span>
@@ -38,7 +38,7 @@
 							<li class="movements-list__item">
 								<button
 									type="button"
-									class="movements-list__btn"
+									class="movements-list__btn btn"
 									data-activity="push ups"
 								>
 									<span class="movements-list__title">Push ups</span>
@@ -50,7 +50,7 @@
 							<li class="movements-list__item">
 								<button
 									type="button"
-									class="movements-list__btn"
+									class="movements-list__btn btn"
 									data-activity="squats"
 								>
 									<span class="movements-list__title">Squats</span>
@@ -69,7 +69,7 @@
 						<div class="statistic">statistic</div>
 					</div>
 
-					<button class="clear">Clear</button>
+					<button class="clear btn">Clear</button>
 					<div class="btn">test</div>
 				</div>
 			</header>
@@ -96,7 +96,7 @@
 								<button
 									type="button"
 									data-btn="increaseCount"
-									class="form-counter__btn btn-plus"
+									class="form-counter__btn btn btn-plus"
 								>
 									+ 1
 								</button>
@@ -109,16 +109,17 @@
 								<button
 									type="button"
 									data-btn="decreaseCount"
-									class="form-counter__btn btn-minus"
+									class="form-counter__btn btn btn-minus"
 								>
 									- 1
 								</button>
 							</div>
 
 							<button
+								disabled
 								type="button"
 								data-btn="saveCount"
-								class="form-counter__btn btn-save"
+								class="form-counter__btn btn btn-save"
 							>
 								Save
 							</button>
