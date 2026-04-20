@@ -2,8 +2,11 @@
 $border-radius: 8px;
 $border-width: 1px;
 $border-solid: solid;
-$min-width: 60px;
+$btn-minWidth: 60px;
 
+// ===== Custom input =====
+$inp-minWidth: 120px;
+$inp-radius: 4px;
 // ===== Basic colors =====
 $white: #ffffff;
 $black: #000000;
@@ -31,7 +34,7 @@ $text-default: $gray;
 $text-light: $light;
 $text-dark: $dark;
 
-// ===== Typography buttons =====
+// ===== Typography button =====
 $btn-ff: $font-primary;
 $btn-fz: $font-size;
 $btn-lh: $line-height;
@@ -41,4 +44,16 @@ $btn-borderRadius: $border-radius;
 $btn-borderWidth: $border-width;
 $btn-borderStyle: $border-solid;
 $btn-borderColor: $light;
-$btn-minWidth: $min-width;
+$btn-minWidth: $btn-minWidth;
+
+// ===== Typography input =====
+$inp-ff: $font-primary;
+$inp-fz: $font-size;
+$inp-lh: $line-height;
+$inp-fw: $font-regular;
+$inp-color: $white;
+$inp-borderRadius: $inp-radius;
+$inp-borderWidth: $border-width;
+$inp-borderStyle: $border-solid;
+$inp-borderColor: $light;
+$inp-minWidth: $inp-minWidth;

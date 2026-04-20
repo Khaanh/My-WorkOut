@@ -1,0 +1,16 @@
+@use "../variables" as *;
+.inp {
+	border-radius: $inp-borderRadius;
+	border-color: $btn-borderColor;
+	border-width: $btn-borderWidth;
+	border-style: $btn-borderStyle;
+	// background-color: $white;
+	// color: $dark;
+	background-color: transparent;
+	color: $white;
+
+	max-width: 120px;
+	min-width: 120px;
+	height: 38px;
+	padding: 6px 8px;
+}

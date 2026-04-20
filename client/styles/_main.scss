@@ -2,7 +2,8 @@
 @use "./helpers" as *;
 @use "./variables" as *;
 @use "./mixins" as *;
-@use "./components//button" as *;
+@use "./components/_button" as *;
+@use "./components/_input" as *;
 
 .wrapper {
 	max-width: 100%;
