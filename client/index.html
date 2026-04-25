@@ -77,8 +77,9 @@
 				<div class="container">
 					<div class="main-section">
 						<form
-							class="form-counter"
+							class="form-counter js-form"
 							data-form-id="form-original"
+							data-action="formCount"
 							id="formDefault"
 							action=""
 						>
@@ -94,21 +95,24 @@
 							<div class="form-counter__container">
 								<button
 									type="button"
+									data-action="increaseCount"
 									data-btn="increaseCount"
-									class="form-counter__btn btn-plus"
+									class="form-counter__btn"
 								>
 									+ 1
 								</button>
 								<input
 									id="counterInput"
+									data-action="inputCount"
 									class="form-counter__input"
 									type="number"
 									placeholder="0"
 								/>
 								<button
 									type="button"
+									data-action="decreaseCount"
 									data-btn="decreaseCount"
-									class="form-counter__btn btn-minus"
+									class="form-counter__btn"
 								>
 									- 1
 								</button>
@@ -116,6 +120,7 @@
 
 							<button
 								type="button"
+								data-action="saveCount"
 								data-btn="saveCount"
 								class="form-counter__btn btn-save"
 							>
