@@ -76,19 +76,11 @@
 			<div class="main-page">
 				<div class="container">
 					<div class="main-section">
-						<form
-							class="form-counter"
-							data-form-id="form-original"
-							data-action="formCount"
-							id="formDefault"
-							action=""
-						>
+						<form class="form-counter" data-action="formCount" action="">
 							<div class="form-counter__control">
 								<h2 class="form-counter__title">Pull ups:</h2>
 								<p class="form-counter__number">
-									<span id="counterDisplay" class="form-counter__display"
-										>0</span
-									>
+									<span class="form-counter__display">0</span>
 								</p>
 							</div>
 
@@ -96,13 +88,11 @@
 								<button
 									type="button"
 									data-action="increaseCount"
-									data-btn="increaseCount"
 									class="form-counter__btn"
 								>
 									+ 1
 								</button>
 								<input
-									id="counterInput"
 									data-action="inputCount"
 									class="form-counter__input"
 									type="number"
@@ -111,7 +101,6 @@
 								<button
 									type="button"
 									data-action="decreaseCount"
-									data-btn="decreaseCount"
 									class="form-counter__btn"
 								>
 									- 1
@@ -121,8 +110,7 @@
 							<button
 								type="button"
 								data-action="saveCount"
-								data-btn="saveCount"
-								class="form-counter__btn btn-save"
+								class="form-counter__btn"
 							>
 								Save
 							</button>
@@ -133,19 +121,6 @@
 
 			<footer class="footer"></footer>
 		</div>
-		<!-- TODO: remove CDN and replace with proper library bundler setup -->
-		<!-- <script src="https://cdn.jsdelivr.net/npm/short-unique-id@latest/dist/short-unique-id.min.js"></script> -->
-
 		<script type="module" src="/index.js"></script>
 	</body>
 </html>
-<!-- 08.01.26 -->
-<!-- TODO: Dark(Neon)/light theme -->
-<!-- 11.01.26 -->
-<!-- TODO: Allow selecting two exercises at the same time (push/pull up) -->
-<!-- 30.01.26 -->
-<!-- TODO: Add scss mixins -->
-<!-- 12.01.26 -->
-<!-- !FIX: btnMinus function -->
-<!-- !FIX: btnSave function - FIXED -->
-<!-- !FIX: btnSave by clicking "ENTER" -->
