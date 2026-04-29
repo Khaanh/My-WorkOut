@@ -17,21 +17,30 @@ document.addEventListener("click", (e) => {
 
 	console.log(target.dataset.action);
 
-	if (target.dataset.action === "increaseCount") increaseCounter(counter);
-	if (target.dataset.action === "decreaseCount") decreaseCounter(counter);
-	if (target.dataset.action === "saveCount") saveCounter(counter);
+	if (target.dataset.action === "increaseCount") {
+		form
+			.querySelector('button[data-action="increaseCount"]')
+			.addEventListener("click", increaseCounter);
+	}
+	if (target.dataset.action === "decreaseCount") {
+		form
+			.querySelector('button[data-action="decreaseCount"]')
+			.addEventListener("click", decreaseCounter);
+	}
+	// if (target.dataset.action === "decreaseCount") decreaseCounter();
+	// if (target.dataset.action === "saveCount") saveCounter();
 
 	generatedId = uid.rnd();
 	form.id || form.setAttribute("id", generatedId);
 	localStorage.setItem("formID", form.id);
 });
 
-const increaseCounter = function (counter) {
+const increaseCounter = function () {
 	counter++;
 	console.log(counter);
 };
 
-const decreaseCounter = function (counter) {
+const decreaseCounter = function () {
 	counter--;
 	console.log(counter);
 };
