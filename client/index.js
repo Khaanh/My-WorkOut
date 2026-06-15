@@ -3,7 +3,7 @@ import "/index.scss";
 
 const uid = new ShortUniqueId({ length: 13 });
 const btnClear = document.querySelector(".clear");
-let generatedId, savedId, form, target, savedCounter;
+let generatedId, savedId, form, target, counterDisplay, savedCounter;
 let counter = 0;
 
 btnClear.addEventListener("click", function () {
@@ -14,21 +14,30 @@ btnClear.addEventListener("click", function () {
 document.addEventListener("click", (e) => {
 	form = e.target.closest("[data-action='formCount']");
 	target = e.target.closest("[data-action]");
+	counterDisplay = form.querySelector(".form-counter__display");
 
-	console.log(target.dataset.action);
+	console.log(counterDisplay);
+
+	if (!form || !target) return;
+
+	// if (target.dataset.action === "increaseCount") {
+	// 	form
+	// 		.querySelector('button[data-action="increaseCount"]')
+	// 		.addEventListener("click", increaseCounter);
+	// }
+	// if (target.dataset.action === "decreaseCount") {
+	// 	form
+	// 		.querySelector('button[data-action="decreaseCount"]')
+	// 		.addEventListener("click", decreaseCounter);
+	// }
 
 	if (target.dataset.action === "increaseCount") {
-		form
-			.querySelector('button[data-action="increaseCount"]')
-			.addEventListener("click", increaseCounter);
+		increaseCounter();
 	}
+
 	if (target.dataset.action === "decreaseCount") {
-		form
-			.querySelector('button[data-action="decreaseCount"]')
-			.addEventListener("click", decreaseCounter);
+		decreaseCounter();
 	}
-	// if (target.dataset.action === "decreaseCount") decreaseCounter();
-	// if (target.dataset.action === "saveCount") saveCounter();
 
 	generatedId = uid.rnd();
 	form.id || form.setAttribute("id", generatedId);
@@ -37,11 +46,14 @@ document.addEventListener("click", (e) => {
 
 const increaseCounter = function () {
 	counter++;
+	counterDisplay.textContent = counter;
 	console.log(counter);
 };
 
 const decreaseCounter = function () {
+	if (counter <= 0) return;
 	counter--;
+	counterDisplay.textContent = counter;
 	console.log(counter);
 };
 
