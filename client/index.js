@@ -3,7 +3,13 @@ import "/index.scss";
 
 const uid = new ShortUniqueId({ length: 13 });
 const btnClear = document.querySelector(".clear");
-let generatedId, savedId, form, target, counterDisplay, savedCounter;
+let generatedId,
+	savedId,
+	formEl,
+	targetEl,
+	inputEl,
+	counterDisplay,
+	savedCounter;
 let counter = 0;
 
 btnClear.addEventListener("click", function () {
@@ -11,43 +17,43 @@ btnClear.addEventListener("click", function () {
 	location.reload();
 });
 
+document.addEventListener("DOMContentLoaded", (e) => {
+	let previousCounter = Number(localStorage.getItem(localStorage.key(0)));
+	let counterDisplay = document.querySelector(".form-counter__display");
+	counterDisplay.textContent = previousCounter;
+});
+
 document.addEventListener("click", (e) => {
-	form = e.target.closest("[data-action='formCount']");
-	target = e.target.closest("[data-action]");
-	counterDisplay = form.querySelector(".form-counter__display");
+	formEl = e.target.closest("[data-action='formCount']");
+	targetEl = e.target.closest("[data-action]");
+	inputEl = formEl.querySelector("[data-action='inputCount']");
+	counterDisplay = formEl.querySelector(".form-counter__display");
 
-	console.log(counterDisplay);
+	console.log(inputEl);
 
-	if (!form || !target) return;
+	if (!formEl || !targetEl) return;
 
-	// if (target.dataset.action === "increaseCount") {
-	// 	form
-	// 		.querySelector('button[data-action="increaseCount"]')
-	// 		.addEventListener("click", increaseCounter);
-	// }
-	// if (target.dataset.action === "decreaseCount") {
-	// 	form
-	// 		.querySelector('button[data-action="decreaseCount"]')
-	// 		.addEventListener("click", decreaseCounter);
-	// }
+	generatedId = uid.rnd();
+	formEl.id || formEl.setAttribute("id", generatedId);
 
-	if (target.dataset.action === "increaseCount") {
+	if (targetEl.dataset.action === "increaseCount") {
 		increaseCounter();
 	}
 
-	if (target.dataset.action === "decreaseCount") {
+	if (targetEl.dataset.action === "decreaseCount") {
 		decreaseCounter();
 	}
 
-	generatedId = uid.rnd();
-	form.id || form.setAttribute("id", generatedId);
-	localStorage.setItem("formID", form.id);
+	if (targetEl.dataset.action === "saveCount") {
+		saveCounter();
+	}
 });
 
 const increaseCounter = function () {
 	counter++;
 	counterDisplay.textContent = counter;
 	console.log(counter);
+	localStorage.setItem(formEl.id, counter);
 };
 
 const decreaseCounter = function () {
@@ -55,6 +61,13 @@ const decreaseCounter = function () {
 	counter--;
 	counterDisplay.textContent = counter;
 	console.log(counter);
+	localStorage.setItem(formEl.id, counter);
 };
 
-const saveCounter = function (e) {};
+const saveCounter = function (e) {
+	let inputVal = Number(inputEl.value);
+	counter = counter + inputVal;
+	counterDisplay.textContent = counter;
+	localStorage.setItem(formEl.id, counter);
+	inputEl.value = "";
+};
