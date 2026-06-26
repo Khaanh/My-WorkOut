@@ -5,13 +5,14 @@ const uid = new ShortUniqueId({ length: 13 });
 const btnClear = document.querySelector(".clear");
 let generatedId,
 	savedId,
-	formEl,
 	formData,
+	formEl,
 	targetEl,
 	inputEl,
 	counterDisplay,
-	savedCounter;
-let counter = 0;
+	savedCounter,
+	previousCounter,
+	counter = 0;
 
 btnClear.addEventListener("click", function () {
 	localStorage.clear();
@@ -19,11 +20,12 @@ btnClear.addEventListener("click", function () {
 });
 
 document.addEventListener("DOMContentLoaded", (e) => {
-	let previousCounter = Number(localStorage.getItem(localStorage.key(0)));
-	let counterDisplay = document.querySelector(".form-counter__display");
+	previousCounter = Number(localStorage.getItem("pullups"));
+	counterDisplay = document.querySelector(".form-counter__display");
 	let firstInput = document.querySelectorAll(".form-counter__input");
 	firstInput[0].focus();
 	counterDisplay.textContent = previousCounter;
+	console.log(previousCounter);
 });
 
 document.addEventListener("click", (e) => {
@@ -39,7 +41,7 @@ document.addEventListener("click", (e) => {
 	if (!formEl || !targetEl) return;
 
 	generatedId = uid.rnd();
-	formEl.id || formEl.setAttribute("id", `${formData}-${generatedId}`);
+	formEl.id || formEl.setAttribute("id", `${formData}`);
 
 	if (targetEl.dataset.action === "increaseCount") {
 		increaseCounter();
@@ -56,9 +58,16 @@ document.addEventListener("click", (e) => {
 
 const increaseCounter = function () {
 	counter++;
-	counterDisplay.textContent = counter;
+
+	if (previousCounter > 0) {
+		counterDisplay.textContent = previousCounter + counter;
+		localStorage.setItem(formEl.id, counter);
+	} else {
+		counterDisplay.textContent = counter;
+		localStorage.setItem(formEl.id, counter);
+	}
+
 	console.log(counter);
-	localStorage.setItem(formEl.id, counter);
 };
 
 const decreaseCounter = function () {
