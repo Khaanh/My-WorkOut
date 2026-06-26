@@ -6,6 +6,7 @@ const btnClear = document.querySelector(".clear");
 let generatedId,
 	savedId,
 	formEl,
+	formData,
 	targetEl,
 	inputEl,
 	counterDisplay,
@@ -20,6 +21,8 @@ btnClear.addEventListener("click", function () {
 document.addEventListener("DOMContentLoaded", (e) => {
 	let previousCounter = Number(localStorage.getItem(localStorage.key(0)));
 	let counterDisplay = document.querySelector(".form-counter__display");
+	let firstInput = document.querySelectorAll(".form-counter__input");
+	firstInput[0].focus();
 	counterDisplay.textContent = previousCounter;
 });
 
@@ -28,13 +31,15 @@ document.addEventListener("click", (e) => {
 	targetEl = e.target.closest("[data-action]");
 	inputEl = formEl.querySelector("[data-action='inputCount']");
 	counterDisplay = formEl.querySelector(".form-counter__display");
+	formData = formEl.getAttribute("data-default");
+	console.log(formData);
 
-	console.log(inputEl);
+	// console.log(inputEl);
 
 	if (!formEl || !targetEl) return;
 
 	generatedId = uid.rnd();
-	formEl.id || formEl.setAttribute("id", generatedId);
+	formEl.id || formEl.setAttribute("id", `${formData}-${generatedId}`);
 
 	if (targetEl.dataset.action === "increaseCount") {
 		increaseCounter();
