@@ -40,26 +40,26 @@ document.addEventListener("click", (e) => {
 	formEl.id || formEl.setAttribute("id", `${dataExercise}`);
 
 	if (targetEl.dataset.action === "increaseCount") {
-		increaseCounter(dataExercise);
+		increaseValue(dataExercise);
 	}
 
 	if (targetEl.dataset.action === "decreaseCount") {
-		decreaseCounter(dataExercise);
+		decreaseValue(dataExercise);
 	}
 
 	if (targetEl.dataset.action === "saveCount") {
-		saveCounter(e);
+		saveValue(e);
 	}
 });
 
-const increaseCounter = function (dataExercise) {
+const increaseValue = function (dataExercise) {
 	value = localStorage.getItem(dataExercise.toLowerCase(), value);
 	value++;
 	counterDisplay.textContent = value;
 	localStorage.setItem(dataExercise.toLowerCase(), value);
 };
 
-const decreaseCounter = function (dataExercise) {
+const decreaseValue = function (dataExercise) {
 	value = localStorage.getItem(`${dataExercise.toLowerCase()}`);
 
 	if (value <= 0) return;
@@ -68,7 +68,7 @@ const decreaseCounter = function (dataExercise) {
 	localStorage.setItem(`${dataExercise.toLowerCase()}`, value);
 };
 
-// const saveCounter = function (e) {
+// const saveValue = function (e) {
 // 	let inputVal = Number(inputEl.value);
 // 	counter = counter + inputVal;
 // 	counterDisplay.textContent = counter;
