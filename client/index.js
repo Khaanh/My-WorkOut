@@ -9,9 +9,11 @@ let generatedId,
 	formEl,
 	targetEl,
 	inputEl,
+	firstInputEl,
 	counterDisplay,
 	savedCounter,
 	previousCounter,
+	defaultValue,
 	value = 0;
 
 btnClear.addEventListener("click", function () {
@@ -20,9 +22,11 @@ btnClear.addEventListener("click", function () {
 });
 
 document.addEventListener("DOMContentLoaded", (e) => {
+	defaultValue = localStorage.getItem("pullups");
 	counterDisplay = document.querySelector(".form-counter__display");
-	let firstInput = document.querySelectorAll(".form-counter__input");
-	firstInput[0].focus();
+	counterDisplay.textContent = defaultValue;
+	firstInputEl = document.querySelectorAll(".form-counter__input");
+	firstInputEl[0].focus();
 });
 
 document.addEventListener("click", (e) => {
@@ -39,39 +43,32 @@ document.addEventListener("click", (e) => {
 	generatedId = uid.rnd();
 	formEl.id || formEl.setAttribute("id", `${dataExercise}`);
 
-	if (targetEl.dataset.action === "increaseCount") {
-		increaseValue(dataExercise);
-	}
-
-	if (targetEl.dataset.action === "decreaseCount") {
-		decreaseValue(dataExercise);
-	}
-
-	if (targetEl.dataset.action === "saveCount") {
-		saveValue(e);
-	}
+	if (targetEl.dataset.action === "increaseValue") increaseValue(dataExercise);
+	if (targetEl.dataset.action === "decreaseValue") decreaseValue(dataExercise);
+	if (targetEl.dataset.action === "saveValue") saveValue(dataExercise);
 });
 
-const increaseValue = function (dataExercise) {
-	value = localStorage.getItem(dataExercise.toLowerCase(), value);
+const increaseValue = function (exercise) {
+	value = localStorage.getItem(exercise.toLowerCase(), value);
 	value++;
 	counterDisplay.textContent = value;
-	localStorage.setItem(dataExercise.toLowerCase(), value);
+	localStorage.setItem(exercise.toLowerCase(), value);
 };
 
-const decreaseValue = function (dataExercise) {
-	value = localStorage.getItem(`${dataExercise.toLowerCase()}`);
+const decreaseValue = function (exercise) {
+	value = localStorage.getItem(`${exercise.toLowerCase()}`);
 
 	if (value <= 0) return;
 	value--;
 	counterDisplay.textContent = value;
-	localStorage.setItem(`${dataExercise.toLowerCase()}`, value);
+	localStorage.setItem(`${exercise.toLowerCase()}`, value);
 };
 
-// const saveValue = function (e) {
-// 	let inputVal = Number(inputEl.value);
-// 	counter = counter + inputVal;
-// 	counterDisplay.textContent = counter;
-// 	localStorage.setItem(formEl.id, counter);
-// 	inputEl.value = "";
-// };
+const saveValue = function (exercise) {
+	value = Number(localStorage.getItem(`${exercise.toLowerCase()}`));
+	value += Number(inputEl.value);
+
+	counterDisplay.textContent = value;
+	localStorage.setItem(`${exercise.toLowerCase()}`, value);
+	inputEl.value = "";
+};
