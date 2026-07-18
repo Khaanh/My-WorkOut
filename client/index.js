@@ -5,14 +5,14 @@ const uid = new ShortUniqueId({ length: 13 });
 const btnClear = document.querySelector(".clear");
 let generatedId,
 	savedId,
-	formData,
+	dataExercise,
 	formEl,
 	targetEl,
 	inputEl,
 	counterDisplay,
 	savedCounter,
 	previousCounter,
-	counter = 0;
+	value = 0;
 
 btnClear.addEventListener("click", function () {
 	localStorage.clear();
@@ -20,12 +20,9 @@ btnClear.addEventListener("click", function () {
 });
 
 document.addEventListener("DOMContentLoaded", (e) => {
-	previousCounter = Number(localStorage.getItem("pullups"));
 	counterDisplay = document.querySelector(".form-counter__display");
 	let firstInput = document.querySelectorAll(".form-counter__input");
 	firstInput[0].focus();
-	counterDisplay.textContent = previousCounter;
-	console.log(previousCounter);
 });
 
 document.addEventListener("click", (e) => {
@@ -33,55 +30,48 @@ document.addEventListener("click", (e) => {
 	targetEl = e.target.closest("[data-action]");
 	inputEl = formEl.querySelector("[data-action='inputCount']");
 	counterDisplay = formEl.querySelector(".form-counter__display");
-	formData = formEl.getAttribute("data-default");
-	console.log(formData);
+	dataExercise = formEl.getAttribute("data-exercise");
 
-	// console.log(inputEl);
+	console.log(dataExercise.toLowerCase());
 
 	if (!formEl || !targetEl) return;
 
 	generatedId = uid.rnd();
-	formEl.id || formEl.setAttribute("id", `${formData}`);
+	formEl.id || formEl.setAttribute("id", `${dataExercise}`);
 
 	if (targetEl.dataset.action === "increaseCount") {
-		increaseCounter();
+		increaseCounter(dataExercise);
 	}
 
 	if (targetEl.dataset.action === "decreaseCount") {
-		decreaseCounter();
+		decreaseCounter(dataExercise);
 	}
 
 	if (targetEl.dataset.action === "saveCount") {
-		saveCounter();
+		saveCounter(e);
 	}
 });
 
-const increaseCounter = function () {
-	counter++;
-
-	if (previousCounter > 0) {
-		counterDisplay.textContent = previousCounter + counter;
-		localStorage.setItem(formEl.id, counter);
-	} else {
-		counterDisplay.textContent = counter;
-		localStorage.setItem(formEl.id, counter);
-	}
-
-	console.log(counter);
+const increaseCounter = function (dataExercise) {
+	value = localStorage.getItem(dataExercise.toLowerCase(), value);
+	value++;
+	counterDisplay.textContent = value;
+	localStorage.setItem(dataExercise.toLowerCase(), value);
 };
 
-const decreaseCounter = function () {
-	if (counter <= 0) return;
-	counter--;
-	counterDisplay.textContent = counter;
-	console.log(counter);
-	localStorage.setItem(formEl.id, counter);
+const decreaseCounter = function (dataExercise) {
+	value = localStorage.getItem(`${dataExercise.toLowerCase()}`);
+
+	if (value <= 0) return;
+	value--;
+	counterDisplay.textContent = value;
+	localStorage.setItem(`${dataExercise.toLowerCase()}`, value);
 };
 
-const saveCounter = function (e) {
-	let inputVal = Number(inputEl.value);
-	counter = counter + inputVal;
-	counterDisplay.textContent = counter;
-	localStorage.setItem(formEl.id, counter);
-	inputEl.value = "";
-};
+// const saveCounter = function (e) {
+// 	let inputVal = Number(inputEl.value);
+// 	counter = counter + inputVal;
+// 	counterDisplay.textContent = counter;
+// 	localStorage.setItem(formEl.id, counter);
+// 	inputEl.value = "";
+// };
