@@ -3,6 +3,8 @@ import "/index.scss";
 
 const uid = new ShortUniqueId({ length: 13 });
 const btnClear = document.querySelector(".clear");
+const btnSave = document.querySelector("button[data-action=saveValue]");
+
 let generatedId,
 	savedId,
 	dataExercise,
@@ -56,19 +58,29 @@ const increaseValue = function (exercise) {
 };
 
 const decreaseValue = function (exercise) {
-	value = localStorage.getItem(`${exercise.toLowerCase()}`);
+	value = localStorage.getItem(exercise.toLowerCase());
 
 	if (value <= 0) return;
 	value--;
 	counterDisplay.textContent = value;
-	localStorage.setItem(`${exercise.toLowerCase()}`, value);
+	localStorage.setItem(exercise.toLowerCase(), value);
 };
 
 const saveValue = function (exercise) {
-	value = Number(localStorage.getItem(`${exercise.toLowerCase()}`));
+	value = Number(localStorage.getItem(exercise.toLowerCase()));
 	value += Number(inputEl.value);
 
 	counterDisplay.textContent = value;
-	localStorage.setItem(`${exercise.toLowerCase()}`, value);
+	localStorage.setItem(exercise.toLowerCase(), value);
 	inputEl.value = "";
+	inputEl.focus();
 };
+
+// document.addEventListener("keypress", function (e) {
+// 	e.preventDefault();
+// 	console.log(e.key);
+
+// 	if (e.key === "Enter") {
+// 		saveValue();
+// 	}
+// });
