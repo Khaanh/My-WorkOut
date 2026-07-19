@@ -4,6 +4,15 @@ import "/index.scss";
 const uid = new ShortUniqueId({ length: 13 });
 const btnClear = document.querySelector(".clear");
 const btnSave = document.querySelector("button[data-action=saveValue]");
+const btnToggleSidebar = document.querySelector("#btnToggleSidebar");
+const defaultExercise = document
+	.querySelector("form[data-default=pullUps]")
+	.getAttribute("data-default")
+	.toLocaleLowerCase();
+
+const listOfBtns = document.querySelectorAll(".movements-list__btn");
+
+console.log(defaultExercise);
 
 let generatedId,
 	savedId,
@@ -24,7 +33,7 @@ btnClear.addEventListener("click", function () {
 });
 
 document.addEventListener("DOMContentLoaded", (e) => {
-	defaultValue = localStorage.getItem("pullups");
+	defaultValue = localStorage.getItem(defaultExercise) || 0;
 	counterDisplay = document.querySelector(".form-counter__display");
 	counterDisplay.textContent = defaultValue;
 	firstInputEl = document.querySelectorAll(".form-counter__input");
@@ -40,33 +49,59 @@ document.addEventListener("click", (e) => {
 
 	console.log(dataExercise.toLowerCase());
 
-	if (!formEl || !targetEl) return;
+	// if (!formEl || !targetEl) return;
 
-	generatedId = uid.rnd();
-	formEl.id || formEl.setAttribute("id", `${dataExercise}`);
+	// generatedId = uid.rnd();
+	// formEl.id || formEl.setAttribute("id", `${dataExercise}`);
 
 	if (targetEl.dataset.action === "increaseValue") increaseValue(dataExercise);
 	if (targetEl.dataset.action === "decreaseValue") decreaseValue(dataExercise);
 	if (targetEl.dataset.action === "saveValue") saveValue(dataExercise);
 });
 
-const increaseValue = function (exercise) {
+// const increaseValue = function (exercise) {
+// 	value = localStorage.getItem(exercise.toLowerCase(), value);
+// 	value++;
+// 	counterDisplay.textContent = value;
+// 	localStorage.setItem(exercise.toLowerCase(), value);
+// };
+
+// const decreaseValue = function (exercise) {
+// 	value = localStorage.getItem(exercise.toLowerCase());
+
+// 	if (value <= 0) return;
+// 	value--;
+// 	counterDisplay.textContent = value;
+// 	localStorage.setItem(exercise.toLowerCase(), value);
+// };
+
+// const saveValue = function (exercise) {
+// 	value = Number(localStorage.getItem(exercise.toLowerCase()));
+// 	value += Number(inputEl.value);
+
+// 	counterDisplay.textContent = value;
+// 	localStorage.setItem(exercise.toLowerCase(), value);
+// 	inputEl.value = "";
+// 	inputEl.focus();
+// };
+
+function increaseValue(exercise) {
 	value = localStorage.getItem(exercise.toLowerCase(), value);
 	value++;
 	counterDisplay.textContent = value;
 	localStorage.setItem(exercise.toLowerCase(), value);
-};
+}
 
-const decreaseValue = function (exercise) {
+function decreaseValue(exercise) {
 	value = localStorage.getItem(exercise.toLowerCase());
 
 	if (value <= 0) return;
 	value--;
 	counterDisplay.textContent = value;
 	localStorage.setItem(exercise.toLowerCase(), value);
-};
+}
 
-const saveValue = function (exercise) {
+function saveValue(exercise) {
 	value = Number(localStorage.getItem(exercise.toLowerCase()));
 	value += Number(inputEl.value);
 
@@ -74,13 +109,20 @@ const saveValue = function (exercise) {
 	localStorage.setItem(exercise.toLowerCase(), value);
 	inputEl.value = "";
 	inputEl.focus();
-};
+}
 
-// document.addEventListener("keypress", function (e) {
-// 	e.preventDefault();
-// 	console.log(e.key);
+btnToggleSidebar.addEventListener("click", function () {
+	document.querySelector(".movement-widget").classList.toggle("is-active");
+});
 
-// 	if (e.key === "Enter") {
-// 		saveValue();
-// 	}
-// });
+listOfBtns.forEach((item) => {
+	item.addEventListener("click", function (e) {
+		const formNode = document.querySelector("form");
+		const formClone = formNode.cloneNode(true);
+		formClone.querySelector(".form-counter__display").textContent = 0;
+		formClone.removeAttribute("data-default");
+		formClone.setAttribute("data-exercise", item.getAttribute("data-activity"));
+
+		document.querySelector(".main-section").appendChild(formClone);
+	});
+});
