@@ -123,6 +123,14 @@ h1 {
 
 	&.is-active {
 		left: 0;
+
+		.movement-widget__control {
+			right: 0;
+		}
+
+		.movement-widget__control--icon {
+			transform: scale(-1);
+		}
 	}
 
 	&__control {
@@ -131,12 +139,6 @@ h1 {
 		right: -78px;
 		margin: 12px;
 		transition: all 0.1s ease-in;
-
-		&.is-active {
-			// right: 0;
-			left: 0;
-			right: auto;
-		}
 
 		&--icon {
 			display: inline-block;
