@@ -6,8 +6,8 @@ const btnClear = document.querySelector(".clear");
 const btnSave = document.querySelector("button[data-action=saveValue]");
 const btnToggleSidebar = document.querySelector("#btnToggleSidebar");
 const defaultExercise = document
-	.querySelector("form[data-default=pullUp]")
-	.getAttribute("data-default")
+	.querySelectorAll(".movements-list__btn")[0]
+	.getAttribute("data-activity")
 	.toLocaleLowerCase();
 
 const listOfBtns = document.querySelectorAll(".movements-list__btn");
