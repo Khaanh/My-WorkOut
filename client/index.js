@@ -83,7 +83,10 @@ listOfBtns.forEach((item) => {
 	item.addEventListener("click", function (e) {
 		const formNode = document.querySelector("form");
 		const formClone = formNode.cloneNode(true);
+		const title = item.querySelector(".movements-list__title").innerHTML;
+
 		formClone.querySelector(".form-counter__display").textContent = 0;
+		formClone.querySelector(".form-counter__title").textContent = title + ":";
 		formClone.removeAttribute("data-default");
 		formClone.setAttribute("data-exercise", item.getAttribute("data-activity"));
 
