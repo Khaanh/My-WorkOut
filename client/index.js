@@ -5,14 +5,11 @@ const uid = new ShortUniqueId({ length: 13 });
 const btnClear = document.querySelector(".clear");
 const btnSave = document.querySelector("button[data-action=saveValue]");
 const btnToggleSidebar = document.querySelector("#btnToggleSidebar");
-const defaultExercise = document
-	.querySelectorAll(".movements-list__btn")[0]
-	.getAttribute("data-activity")
-	.toLocaleLowerCase();
-
 const listOfBtns = document.querySelectorAll(".movements-list__btn");
 
-console.log(defaultExercise);
+const defaultExercise = listOfBtns[0]
+	.getAttribute("data-activity")
+	.toLocaleLowerCase();
 
 let generatedId,
 	savedId,
@@ -47,43 +44,10 @@ document.addEventListener("click", (e) => {
 	counterDisplay = formEl.querySelector(".form-counter__display");
 	dataExercise = formEl.getAttribute("data-exercise");
 
-	console.log(dataExercise.toLowerCase());
-
-	// if (!formEl || !targetEl) return;
-
-	// generatedId = uid.rnd();
-	// formEl.id || formEl.setAttribute("id", `${dataExercise}`);
-
 	if (targetEl.dataset.action === "increaseValue") increaseValue(dataExercise);
 	if (targetEl.dataset.action === "decreaseValue") decreaseValue(dataExercise);
 	if (targetEl.dataset.action === "saveValue") saveValue(dataExercise);
 });
-
-// const increaseValue = function (exercise) {
-// 	value = localStorage.getItem(exercise.toLowerCase(), value);
-// 	value++;
-// 	counterDisplay.textContent = value;
-// 	localStorage.setItem(exercise.toLowerCase(), value);
-// };
-
-// const decreaseValue = function (exercise) {
-// 	value = localStorage.getItem(exercise.toLowerCase());
-
-// 	if (value <= 0) return;
-// 	value--;
-// 	counterDisplay.textContent = value;
-// 	localStorage.setItem(exercise.toLowerCase(), value);
-// };
-
-// const saveValue = function (exercise) {
-// 	value = Number(localStorage.getItem(exercise.toLowerCase()));
-// 	value += Number(inputEl.value);
-
-// 	counterDisplay.textContent = value;
-// 	localStorage.setItem(exercise.toLowerCase(), value);
-// 	inputEl.value = "";
-// 	inputEl.focus();
-// };
 
 function increaseValue(exercise) {
 	value = localStorage.getItem(exercise.toLowerCase(), value);
