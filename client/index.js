@@ -1,7 +1,5 @@
-import ShortUniqueId from "short-unique-id";
 import "/index.scss";
 
-const uid = new ShortUniqueId({ length: 13 });
 const btnClear = document.querySelector(".clear");
 const btnSave = document.querySelector("button[data-action=saveValue]");
 const btnToggleSidebar = document.querySelector("#btnToggleSidebar");
