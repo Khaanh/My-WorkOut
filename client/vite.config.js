@@ -3,6 +3,6 @@ export default {
 		open: true,
 	},
 	build: {
-		outDir: "client",
+		outDir: "./client",
 	},
 };
