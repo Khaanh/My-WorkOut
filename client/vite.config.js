@@ -2,5 +2,7 @@ export default {
 	server: {
 		open: true,
 	},
-	// config options
+	build: {
+		outDir: "client",
+	},
 };
