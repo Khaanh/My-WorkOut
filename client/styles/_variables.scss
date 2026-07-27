@@ -19,11 +19,13 @@ $font-size: 16px;
 $line-height: 1.5;
 $txt-color: $text;
 
-// // =====Typography buttons=====
+$font-regular: 400;
+
+// =====Typography buttons=====
 // $btn-ff: $main-font;
 // $btn-fz: 14px;
 // $btn-lh: 17px;
-// $btn-fw: 700;
-// $btn-color: $accent;
+$btn-fw: $font-regular;
+$btn-color: $white;
 // $btn-bgc: $transp;
-// $btn-radius: 50px;
+$btn-radius: 6x;

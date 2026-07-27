@@ -1,8 +1,8 @@
 @use "./styles/reset";
 @use "./styles/helpers";
 @use "./styles/variables";
+@use "./styles/buttons";
 
-// "dev": "concurrently \"vite\" & \"sass --watch styles/main.scss:dist/main.css\"",
 .wrapper {
 	max-width: 100%;
 	width: 100%;
