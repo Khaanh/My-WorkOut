@@ -1,7 +1,8 @@
-@use "./styles/reset";
-@use "./styles/helpers";
-@use "./styles/variables";
-@use "./styles/buttons";
+@use "./reset";
+// @use "./helpers";
+// @use "./variables";
+// @use "./buttons";
+@import "bootstrap/scss/bootstrap";
 
 .wrapper {
 	max-width: 100%;

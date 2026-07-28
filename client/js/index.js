@@ -1,4 +1,5 @@
-import "./index.scss";
+import "../styles/index.scss";
+// import * as bootstrap from "bootstrap";
 
 const btnClear = document.querySelector(".clear");
 const btnSave = document.querySelector("button[data-action=saveValue]");
