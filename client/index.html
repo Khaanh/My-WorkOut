@@ -13,117 +13,120 @@
 	</head>
 	<body>
 		<div class="wrapper">
-			<header class="header">
-				<div class="header__container container">
-					<ul class="nav">
-						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="#">Active</a>
+			<header class="header mt-4 mb-5">
+				<div class="container d-flex justify-content-center">
+					<!-- <div class="row"> -->
+					<ul class="nav nav-underline">
+						<li class="nav-item px-1">
+							<a class="nav-link fs-4 lh-1 active" aria-current="page" href="#"
+								>Active</a
+							>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">Statistics</a>
+						<li class="nav-item px-1">
+							<a class="nav-link fs-4 lh-1" href="#">Statistics</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">Login</a>
+						<li class="nav-item px-1">
+							<a class="nav-link fs-4 lh-1" href="#">Notes</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link disabled" aria-disabled="true">Notes</a>
+						<li class="nav-item px-1">
+							<a class="nav-link fs-4 lh-1" href="#">Login</a>
 						</li>
 					</ul>
+					<!-- </div> -->
 
-					<sidebar class="movement-widget">
-						<button
-							class="movement-widget__control btn btn-outline-primary"
-							id="btnToggleSidebar"
-						>
-							<span class="movement-widget__control--icon">
-								<svg
-									viewBox="0 0 24 24"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg"
-								>
-									<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-									<g
-										id="SVGRepo_tracerCarrier"
+					<!-- <div class="navigation btn btn-warning col">
+							<div class="login">login</div>
+						</div> -->
+				</div>
+				<div>
+					<button class="btn btn-outline-success">Log out</button>
+					<button class="btn btn-outline-success">Log in</button>
+				</div>
+				<button class="clear btn btn-outline-primary">Clear</button>
+				<sidebar class="movement-widget">
+					<button
+						class="movement-widget__control btn btn-outline-primary"
+						id="btnToggleSidebar"
+					>
+						<span class="movement-widget__control--icon">
+							<svg
+								viewBox="0 0 24 24"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+								<g
+									id="SVGRepo_tracerCarrier"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								></g>
+								<g id="SVGRepo_iconCarrier">
+									<path
+										d="M12 5V19M12 5L6 11M12 5L18 11"
+										stroke="#000000"
+										stroke-width="2"
 										stroke-linecap="round"
 										stroke-linejoin="round"
-									></g>
-									<g id="SVGRepo_iconCarrier">
-										<path
-											d="M12 5V19M12 5L6 11M12 5L18 11"
-											stroke="#000000"
-											stroke-width="2"
-											stroke-linecap="round"
-											stroke-linejoin="round"
-										></path>
-									</g>
-								</svg>
-								<img src="./img/right-arrow.png" alt="arrow icon" />
-							</span>
-						</button>
-						<ul class="movements-list">
-							<li class="movements-list__item">
-								<button
-									type="button"
-									class="movements-list__btn btn btn-outline-light is-active"
-									data-activity="pullUp"
-								>
-									<span class="movements-list__title">Pull ups</span>
-									<span class="movements-list__icon">
-										<img src="./img/pull-up-icon.svg" alt="pull up" />
-									</span>
-								</button>
-							</li>
-							<li class="movements-list__item">
-								<button
-									type="button"
-									class="movements-list__btn btn btn-outline-light"
-									data-activity="pushUp"
-								>
-									<span class="movements-list__title">Push ups</span>
-									<span class="movements-list__icon">
-										<img src="./img/push-up-icon.svg" alt="push up" />
-									</span>
-								</button>
-							</li>
-							<li class="movements-list__item">
-								<button
-									type="button"
-									class="movements-list__btn btn btn-outline-light"
-									data-activity="squat"
-								>
-									<span class="movements-list__title">Squats</span>
-									<span class="movements-list__icon">
-										<img src="./img/squats-icon.svg" alt="squats" />
-									</span>
-								</button>
-							</li>
-							<li class="movements-list__item">
-								<button
-									type="button"
-									class="movements-list__btn btn btn-outline-light"
-									data-activity="muscleUp"
-								>
-									<span class="movements-list__title">Muscle ups</span>
-									<span class="movements-list__icon">
-										<img src="./img/squats-icon.svg" alt="muscleUp" />
-									</span>
-								</button>
-							</li>
-						</ul>
-					</sidebar>
-
-					<h1 class="header__caption caption">Workout Rep Counter</h1>
-
-					<div class="navigation btn btn-warning">
-						<div class="login">login</div>
-						<div class="statistic">statistic</div>
-					</div>
-
-					<button class="clear btn btn-outline-primary">Clear</button>
-				</div>
+									></path>
+								</g>
+							</svg>
+							<img src="./img/right-arrow.png" alt="arrow icon" />
+						</span>
+					</button>
+					<ul class="movements-list">
+						<li class="movements-list__item">
+							<button
+								type="button"
+								class="movements-list__btn btn btn-outline-light is-active"
+								data-activity="pullUp"
+							>
+								<span class="movements-list__title">Pull ups</span>
+								<span class="movements-list__icon">
+									<img src="./img/pull-up-icon.svg" alt="pull up" />
+								</span>
+							</button>
+						</li>
+						<li class="movements-list__item">
+							<button
+								type="button"
+								class="movements-list__btn btn btn-outline-light"
+								data-activity="pushUp"
+							>
+								<span class="movements-list__title">Push ups</span>
+								<span class="movements-list__icon">
+									<img src="./img/push-up-icon.svg" alt="push up" />
+								</span>
+							</button>
+						</li>
+						<li class="movements-list__item">
+							<button
+								type="button"
+								class="movements-list__btn btn btn-outline-light"
+								data-activity="squat"
+							>
+								<span class="movements-list__title">Squats</span>
+								<span class="movements-list__icon">
+									<img src="./img/squats-icon.svg" alt="squats" />
+								</span>
+							</button>
+						</li>
+						<li class="movements-list__item">
+							<button
+								type="button"
+								class="movements-list__btn btn btn-outline-light"
+								data-activity="muscleUp"
+							>
+								<span class="movements-list__title">Muscle ups</span>
+								<span class="movements-list__icon">
+									<img src="./img/squats-icon.svg" alt="muscleUp" />
+								</span>
+							</button>
+						</li>
+					</ul>
+				</sidebar>
 			</header>
 
-			<div class="main-page">
+			<main class="main-page my-5">
 				<div class="container">
 					<div class="main-section">
 						<form
@@ -176,7 +179,7 @@
 						</form>
 					</div>
 				</div>
-			</div>
+			</main>
 
 			<footer class="footer"></footer>
 		</div>

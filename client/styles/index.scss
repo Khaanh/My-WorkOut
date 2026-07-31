@@ -14,14 +14,19 @@
 	margin: 0 auto;
 }
 
+.clear {
+	position: fixed;
+	top: 0;
+	right: 10px;
+}
 h1 {
 	text-align: center;
 }
 
-.caption {
-	font-size: 42px;
-	margin-bottom: 16px;
-}
+// .caption {
+// 	font-size: 42px;
+// 	margin-bottom: 16px;
+// }
 
 .title {
 	font-size: 38px;
@@ -31,20 +36,20 @@ h1 {
 .header {
 	margin-bottom: 48px;
 
-	&__container {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
+	// &__container {
+	// 	display: flex;
+	// 	justify-content: center;
+	// 	align-items: center;
+	// 	flex-direction: column;
 
-		@media only screen and (min-width: 768px) {
-			flex-direction: row;
-		}
-	}
+	// 	@media only screen and (min-width: 768px) {
+	// 		flex-direction: row;
+	// 	}
+	// }
 
-	&__caption {
-		margin: 0 auto;
-	}
+	// &__caption {
+	// 	margin: 0 auto;
+	// }
 }
 
 .control-counter {
