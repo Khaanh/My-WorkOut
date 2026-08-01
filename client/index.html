@@ -12,177 +12,186 @@
 		<title>My WorkOut App</title>
 	</head>
 	<body>
-		<div class="wrapper">
-			<header class="header mt-4 mb-5">
-				<div class="container d-flex justify-content-center">
-					<!-- <div class="row"> -->
-					<ul class="nav nav-underline">
-						<li class="nav-item px-1">
-							<a class="nav-link fs-4 lh-1 active" aria-current="page" href="#"
-								>Active</a
-							>
-						</li>
-						<li class="nav-item px-1">
-							<a class="nav-link fs-4 lh-1" href="#">Statistics</a>
-						</li>
-						<li class="nav-item px-1">
-							<a class="nav-link fs-4 lh-1" href="#">Notes</a>
-						</li>
-						<li class="nav-item px-1">
-							<a class="nav-link fs-4 lh-1" href="#">Login</a>
-						</li>
-					</ul>
-					<!-- </div> -->
-
-					<!-- <div class="navigation btn btn-warning col">
-							<div class="login">login</div>
-						</div> -->
-				</div>
-				<div>
-					<button class="btn btn-outline-success">Log out</button>
-					<button class="btn btn-outline-success">Log in</button>
-				</div>
-				<button class="clear btn btn-outline-primary">Clear</button>
-				<sidebar class="movement-widget">
-					<button
-						class="movement-widget__control btn btn-outline-primary"
-						id="btnToggleSidebar"
+		<!-- <div class="wrapper"> -->
+		<main>
+			<div class="container">
+				<header class="header mt-4 mb-5 border-bottom">
+					<div
+						class="container d-flex flex-wrap align-items-center justify-content-center justify-content-md-between"
 					>
-						<span class="movement-widget__control--icon">
-							<svg
-								viewBox="0 0 24 24"
-								fill="none"
-								xmlns="http://www.w3.org/2000/svg"
-							>
-								<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-								<g
-									id="SVGRepo_tracerCarrier"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								></g>
-								<g id="SVGRepo_iconCarrier">
-									<path
-										d="M12 5V19M12 5L6 11M12 5L18 11"
-										stroke="#000000"
-										stroke-width="2"
+						<div class="col-md-3">
+							<a href="#" class="logo">Logo</a>
+						</div>
+
+						<ul class="nav nav-underline col-md-3 justify-content-center">
+							<li class="nav-item px-1">
+								<a
+									class="nav-link fs-6 lh-1 active"
+									aria-current="page"
+									href="#"
+									>Active</a
+								>
+							</li>
+							<li class="nav-item px-1">
+								<a class="nav-link fs-6 lh-1" href="#">Statistics</a>
+							</li>
+							<li class="nav-item px-1">
+								<a class="nav-link fs-6 lh-1" href="#">Notes</a>
+							</li>
+							<li class="nav-item px-1">
+								<a class="nav-link fs-6 lh-1" href="#">Login</a>
+							</li>
+						</ul>
+
+						<div class="auth-group col-md-3 d-flex justify-content-end">
+							<button class="btn btn-outline-success">Log out</button>
+							<button class="btn btn-outline-danger">Log in</button>
+						</div>
+					</div>
+					<button class="clear btn btn-outline-primary">Clear</button>
+					<sidebar class="movement-widget">
+						<button
+							class="movement-widget__control btn btn-outline-primary"
+							id="btnToggleSidebar"
+						>
+							<span class="movement-widget__control--icon">
+								<svg
+									viewBox="0 0 24 24"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+									<g
+										id="SVGRepo_tracerCarrier"
 										stroke-linecap="round"
 										stroke-linejoin="round"
-									></path>
-								</g>
-							</svg>
-							<img src="./img/right-arrow.png" alt="arrow icon" />
-						</span>
-					</button>
-					<ul class="movements-list">
-						<li class="movements-list__item">
-							<button
-								type="button"
-								class="movements-list__btn btn btn-outline-light is-active"
-								data-activity="pullUp"
-							>
-								<span class="movements-list__title">Pull ups</span>
-								<span class="movements-list__icon">
-									<img src="./img/pull-up-icon.svg" alt="pull up" />
-								</span>
-							</button>
-						</li>
-						<li class="movements-list__item">
-							<button
-								type="button"
-								class="movements-list__btn btn btn-outline-light"
-								data-activity="pushUp"
-							>
-								<span class="movements-list__title">Push ups</span>
-								<span class="movements-list__icon">
-									<img src="./img/push-up-icon.svg" alt="push up" />
-								</span>
-							</button>
-						</li>
-						<li class="movements-list__item">
-							<button
-								type="button"
-								class="movements-list__btn btn btn-outline-light"
-								data-activity="squat"
-							>
-								<span class="movements-list__title">Squats</span>
-								<span class="movements-list__icon">
-									<img src="./img/squats-icon.svg" alt="squats" />
-								</span>
-							</button>
-						</li>
-						<li class="movements-list__item">
-							<button
-								type="button"
-								class="movements-list__btn btn btn-outline-light"
-								data-activity="muscleUp"
-							>
-								<span class="movements-list__title">Muscle ups</span>
-								<span class="movements-list__icon">
-									<img src="./img/squats-icon.svg" alt="muscleUp" />
-								</span>
-							</button>
-						</li>
-					</ul>
-				</sidebar>
-			</header>
-
-			<main class="main-page my-5">
-				<div class="container">
-					<div class="main-section">
-						<form
-							class="form-counter"
-							data-action="formCount"
-							data-exercise="pullUp"
-							data-default="pullUp"
-							action=""
-						>
-							<div class="form-counter__control">
-								<h2 class="form-counter__title" data-action="counterDisplay">
-									Pull ups:
-								</h2>
-								<p class="form-counter__number">
-									<span class="form-counter__display">0</span>
-								</p>
-							</div>
-
-							<div class="form-counter__container">
+									></g>
+									<g id="SVGRepo_iconCarrier">
+										<path
+											d="M12 5V19M12 5L6 11M12 5L18 11"
+											stroke="#000000"
+											stroke-width="2"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										></path>
+									</g>
+								</svg>
+								<img src="./img/right-arrow.png" alt="arrow icon" />
+							</span>
+						</button>
+						<ul class="movements-list">
+							<li class="movements-list__item">
 								<button
 									type="button"
-									data-action="increaseValue"
-									class="form-counter__btn btn btn-outline-primary"
+									class="movements-list__btn btn btn-outline-light is-active"
+									data-activity="pullUp"
 								>
-									+ 1
+									<span class="movements-list__title">Pull ups</span>
+									<span class="movements-list__icon">
+										<img src="./img/pull-up-icon.svg" alt="pull up" />
+									</span>
 								</button>
-								<input
-									data-action="inputCount"
-									class="form-counter__input"
-									type="number"
-									placeholder="0"
-									name="field"
-								/>
+							</li>
+							<li class="movements-list__item">
 								<button
 									type="button"
-									data-action="decreaseValue"
+									class="movements-list__btn btn btn-outline-light"
+									data-activity="pushUp"
+								>
+									<span class="movements-list__title">Push ups</span>
+									<span class="movements-list__icon">
+										<img src="./img/push-up-icon.svg" alt="push up" />
+									</span>
+								</button>
+							</li>
+							<li class="movements-list__item">
+								<button
+									type="button"
+									class="movements-list__btn btn btn-outline-light"
+									data-activity="squat"
+								>
+									<span class="movements-list__title">Squats</span>
+									<span class="movements-list__icon">
+										<img src="./img/squats-icon.svg" alt="squats" />
+									</span>
+								</button>
+							</li>
+							<li class="movements-list__item">
+								<button
+									type="button"
+									class="movements-list__btn btn btn-outline-light"
+									data-activity="muscleUp"
+								>
+									<span class="movements-list__title">Muscle ups</span>
+									<span class="movements-list__icon">
+										<img src="./img/squats-icon.svg" alt="muscleUp" />
+									</span>
+								</button>
+							</li>
+						</ul>
+					</sidebar>
+				</header>
+			</div>
+
+			<div class="container">
+				<main class="main-page my-5">
+					<div class="container">
+						<div class="main-section">
+							<form
+								class="form-counter"
+								data-action="formCount"
+								data-exercise="pullUp"
+								data-default="pullUp"
+								action=""
+							>
+								<div class="form-counter__control">
+									<h2 class="form-counter__title" data-action="counterDisplay">
+										Pull ups:
+									</h2>
+									<p class="form-counter__number">
+										<span class="form-counter__display">0</span>
+									</p>
+								</div>
+
+								<div class="form-counter__container">
+									<button
+										type="button"
+										data-action="increaseValue"
+										class="form-counter__btn btn btn-outline-primary"
+									>
+										+ 1
+									</button>
+									<input
+										data-action="inputCount"
+										class="form-counter__input"
+										type="number"
+										placeholder="0"
+										name="field"
+									/>
+									<button
+										type="button"
+										data-action="decreaseValue"
+										class="form-counter__btn btn btn-outline-primary"
+									>
+										- 1
+									</button>
+								</div>
+
+								<button
+									type="button"
+									data-action="saveValue"
 									class="form-counter__btn btn btn-outline-primary"
 								>
-									- 1
+									Save
 								</button>
-							</div>
-
-							<button
-								type="button"
-								data-action="saveValue"
-								class="form-counter__btn btn btn-outline-primary"
-							>
-								Save
-							</button>
-						</form>
+							</form>
+						</div>
 					</div>
-				</div>
-			</main>
-
-			<footer class="footer"></footer>
-		</div>
+				</main>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+		<!-- </div> -->
 		<script type="module" src="./js/index.js"></script>
 	</body>
 </html>

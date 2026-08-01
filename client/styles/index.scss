@@ -4,15 +4,15 @@
 // @use "./buttons";
 @import "bootstrap/scss/bootstrap";
 
-.wrapper {
+main {
 	max-width: 100%;
 	width: 100%;
 }
 
-.container {
-	padding: 0 10px;
-	margin: 0 auto;
-}
+// .container {
+// 	padding: 0 10px;
+// 	margin: 0 auto;
+// }
 
 .clear {
 	position: fixed;
