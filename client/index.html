@@ -38,9 +38,6 @@
 							<li class="nav-item px-1">
 								<a class="nav-link fs-6 lh-1" href="#">Notes</a>
 							</li>
-							<li class="nav-item px-1">
-								<a class="nav-link fs-6 lh-1" href="#">Login</a>
-							</li>
 						</ul>
 
 						<div class="auth-group col-md-3 d-flex justify-content-end">
@@ -144,39 +141,45 @@
 							data-default="pullUp"
 							action=""
 						>
-							<div class="form-counter__control">
+							<!-- <div class="form-counter__control">
 								<h2 class="form-counter__title" data-action="counterDisplay">
 									Pull ups:
 								</h2>
 								<p class="form-counter__number">
 									<span class="form-counter__display">0</span>
 								</p>
-							</div>
+							</div> -->
 
 							<div
-								class="form-counter__container container d-flex justify-content-center align-items-center"
+								class="form-counter__container d-flex justify-content-center align-items-center mb-3"
 							>
 								<button
 									type="button"
 									data-action="increaseValue"
-									class="form-counter__btn btn btn-outline-primary col-3"
+									class="form-counter__btn btn fs-3 btn-outline-primary align-self-end col-2 col-sm-2"
 								>
 									+ 1
 								</button>
 
-								<div class="conatiner">
+								<!-- <div class="conatiner1 col-2"> -->
+								<label
+									class="form-counter__title col-8 col-sm-6 col-md-3 mx-1 mx-md-2 fs-1 fw-semibold text-wrap"
+									data-action="counterDisplay"
+								>
+									Pull ups: <span class="form-counter__display">0</span>
 									<input
 										data-action="inputCount"
-										class="form-counter__input form-control col-3"
+										class="form-counter__input form-control form-control-lg mt-md-2 mb-md-1"
 										type="number"
 										placeholder="0"
 										name="field"
 									/>
-								</div>
+								</label>
+								<!-- </div> -->
 								<button
 									type="button"
 									data-action="decreaseValue"
-									class="form-counter__btn btn btn-outline-primary col-3"
+									class="form-counter__btn btn fs-3 btn-outline-primary align-self-end col-2 col-sm-2"
 								>
 									- 1
 								</button>
@@ -185,7 +188,7 @@
 							<button
 								type="button"
 								data-action="saveValue"
-								class="form-counter__btn btn btn-outline-primary"
+								class="form-counter__btn btn fs-3 col-12 col-sm-2 col-md-3 btn-outline-primary"
 							>
 								Save
 							</button>
