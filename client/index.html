@@ -17,7 +17,7 @@
 			<div class="container">
 				<header class="header mt-4 mb-5 border-bottom">
 					<div
-						class="container d-flex flex-wrap align-items-center justify-content-center justify-content-md-between"
+						class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between"
 					>
 						<div class="col-md-3">
 							<a href="#" class="logo">Logo</a>
@@ -135,57 +135,62 @@
 
 			<div class="container">
 				<main class="main-page my-5">
-					<div class="container">
-						<div class="main-section">
-							<form
-								class="form-counter"
-								data-action="formCount"
-								data-exercise="pullUp"
-								data-default="pullUp"
-								action=""
-							>
-								<div class="form-counter__control">
-									<h2 class="form-counter__title" data-action="counterDisplay">
-										Pull ups:
-									</h2>
-									<p class="form-counter__number">
-										<span class="form-counter__display">0</span>
-									</p>
-								</div>
+					<div class="">
+						<!-- <div class="main-section"> -->
+						<form
+							class="form-counter"
+							data-action="formCount"
+							data-exercise="pullUp"
+							data-default="pullUp"
+							action=""
+						>
+							<div class="form-counter__control">
+								<h2 class="form-counter__title" data-action="counterDisplay">
+									Pull ups:
+								</h2>
+								<p class="form-counter__number">
+									<span class="form-counter__display">0</span>
+								</p>
+							</div>
 
-								<div class="form-counter__container">
-									<button
-										type="button"
-										data-action="increaseValue"
-										class="form-counter__btn btn btn-outline-primary"
-									>
-										+ 1
-									</button>
+							<div
+								class="form-counter__container container d-flex justify-content-center align-items-center"
+							>
+								<button
+									type="button"
+									data-action="increaseValue"
+									class="form-counter__btn btn btn-outline-primary col-3"
+								>
+									+ 1
+								</button>
+
+								<div class="conatiner">
 									<input
 										data-action="inputCount"
-										class="form-counter__input"
+										class="form-counter__input form-control col-3"
 										type="number"
 										placeholder="0"
 										name="field"
 									/>
-									<button
-										type="button"
-										data-action="decreaseValue"
-										class="form-counter__btn btn btn-outline-primary"
-									>
-										- 1
-									</button>
 								</div>
-
 								<button
 									type="button"
-									data-action="saveValue"
-									class="form-counter__btn btn btn-outline-primary"
+									data-action="decreaseValue"
+									class="form-counter__btn btn btn-outline-primary col-3"
 								>
-									Save
+									- 1
 								</button>
-							</form>
-						</div>
+							</div>
+
+							<button
+								type="button"
+								data-action="saveValue"
+								class="form-counter__btn btn btn-outline-primary"
+							>
+								Save
+							</button>
+						</form>
+						<!-- </div> -->
 					</div>
 				</main>
 			</div>
