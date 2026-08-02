@@ -86,7 +86,7 @@ listOfBtns.forEach((item) => {
 		const title = item.querySelector(".movements-list__title").innerHTML;
 
 		formClone.querySelector(".form-counter__display").textContent = 0;
-		formClone.querySelector(".form-counter__title").textContent = title + ":";
+		// formClone.querySelector(".form-counter__title").textContent = title + ":";
 		formClone.removeAttribute("data-default");
 		formClone.setAttribute("data-exercise", item.getAttribute("data-activity"));
 
