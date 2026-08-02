@@ -51,6 +51,7 @@ document.addEventListener("click", (e) => {
 function increaseValue(exercise) {
 	value = localStorage.getItem(exercise.toLowerCase(), value);
 	value++;
+
 	counterDisplay.textContent = value;
 	localStorage.setItem(exercise.toLowerCase(), value);
 }
@@ -89,6 +90,6 @@ listOfBtns.forEach((item) => {
 		formClone.removeAttribute("data-default");
 		formClone.setAttribute("data-exercise", item.getAttribute("data-activity"));
 
-		document.querySelector(".main-section").appendChild(formClone);
+		document.querySelector(".main-page").appendChild(formClone);
 	});
 });
