@@ -17,13 +17,16 @@
 			<div class="container">
 				<header class="header mt-4 mb-5 border-bottom">
 					<div
-						class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between"
+						class="d-flex flex-wrap align-items-center justify-content-between flex-column flex-md-row"
 					>
 						<div class="col-md-3">
 							<a href="#" class="logo">Logo</a>
 						</div>
 
-						<ul class="nav nav-underline col-md-3 justify-content-center">
+						<!-- <ul class="nav nav-underline col-md-3 justify-content-center"> -->
+						<ul
+							class="nav nav-underline col-md-3 justify-content-start flex-nowrap overflow-x-scroll my-4 mw-mobile-130"
+						>
 							<li class="nav-item px-1">
 								<a
 									class="nav-link fs-5 lh-1 active"
@@ -52,9 +55,9 @@
 							id="btnToggleSidebar"
 						>
 							<span class="movement-widget__control--icon">
-								<svg
+								<!-- <svg
 									viewBox="0 0 24 24"
-									fill="none"
+									fill="#fff"
 									xmlns="http://www.w3.org/2000/svg"
 								>
 									<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -66,17 +69,17 @@
 									<g id="SVGRepo_iconCarrier">
 										<path
 											d="M12 5V19M12 5L6 11M12 5L18 11"
-											stroke="#000000"
+											stroke="#fff"
 											stroke-width="2"
 											stroke-linecap="round"
 											stroke-linejoin="round"
 										></path>
 									</g>
-								</svg>
+								</svg> -->
 								<img src="./img/right-arrow.png" alt="arrow icon" />
 							</span>
 						</button>
-						<ul class="movements-list">
+						<ul class="movements-list p-0">
 							<li class="movements-list__item">
 								<button
 									type="button"
