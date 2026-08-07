@@ -2,6 +2,7 @@ import "../styles/index.scss";
 // import * as bootstrap from "bootstrap";
 
 const btnClear = document.querySelector(".clear");
+const btnFlow = document.querySelector("#btnFlow");
 const btnSave = document.querySelector("button[data-action=saveValue]");
 const btnToggleSidebar = document.querySelector("#btnToggleSidebar");
 const listOfBtns = document.querySelectorAll(".movements-list__btn");
@@ -22,6 +23,8 @@ let generatedId,
 	previousCounter,
 	defaultValue,
 	value = 0;
+
+let inputArrEl;
 
 btnClear.addEventListener("click", function () {
 	localStorage.clear();
@@ -45,7 +48,8 @@ document.addEventListener("click", (e) => {
 
 	if (targetEl.dataset.action === "increaseValue") increaseValue(dataExercise);
 	if (targetEl.dataset.action === "decreaseValue") decreaseValue(dataExercise);
-	if (targetEl.dataset.action === "saveValue") saveValue(dataExercise);
+	if (targetEl.dataset.action === "saveValue")
+		saveValue(dataExercise, nextInputFocus);
 });
 
 function increaseValue(exercise) {
@@ -65,7 +69,7 @@ function decreaseValue(exercise) {
 	localStorage.setItem(exercise.toLowerCase(), value);
 }
 
-function saveValue(exercise) {
+function saveValue(exercise, cb) {
 	value = Number(localStorage.getItem(exercise.toLowerCase()));
 	value += Number(inputEl.value);
 
@@ -73,6 +77,7 @@ function saveValue(exercise) {
 	localStorage.setItem(exercise.toLowerCase(), value);
 	inputEl.value = "";
 	inputEl.focus();
+	cb(inputArrEl);
 }
 
 btnToggleSidebar.addEventListener("click", function () {
@@ -94,3 +99,18 @@ listOfBtns.forEach((item) => {
 		document.querySelector(".main-page").appendChild(formClone);
 	});
 });
+
+// Flow state function
+btnFlow.addEventListener("click", function () {
+	inputArrEl = document.querySelectorAll("[data-action='inputCount']");
+
+	if (inputArrEl.length <= 1) return;
+	nextInputFocus(inputArrEl);
+});
+
+function nextInputFocus(arr) {
+	arr.forEach((inputItem, index) => {
+		inputItem[arr.length].focus();
+		console.log(arr, index);
+	});
+}
