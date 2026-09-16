@@ -60,6 +60,31 @@ h1 {
 	// }
 }
 
+.logo {
+	height: 75px;
+
+	img {
+		width: 75px;
+		// height: 75px;
+	}
+
+	// .logo-icon {
+	// 	opacity: 1;
+	// }
+
+	// .logo-icon-inv {
+	// 	opacity: 0;
+	// }
+
+	// &:hover {
+	// 	.logo-icon {
+	// 		opacity: 0;
+	// 	}
+	// 	.logo-icon-inv {
+	// 		opacity: 1;
+	// 	}
+	// }
+}
 .control-counter {
 	justify-content: center;
 	align-items: center;
